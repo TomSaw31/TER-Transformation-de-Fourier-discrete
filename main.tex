@@ -1,0 +1,82 @@
+\documentclass{article}
+
+\usepackage{parskip}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{tikz} %tracer graphes
+\usepackage{xcolor} %couleurs
+\usepackage{mathrsfs} % symboles stylés
+\usepackage{amsmath} %vecteurs (entre autres)
+\usepackage{stmaryrd} % intervalle d'entiers
+\usepackage{amssymb} % Nécessaire pour \mathbb, les symboles des ensembles
+\usepackage{ulem} %barrer texte 
+\usepackage{cancel} %barrer texte
+\usepackage{amsthm,amsmath} %carré stylé à la fin démo
+\usepackage{mdframed} % Pour les encadrements
+\usepackage{hyperref} % hyperliens pour référencer les sections
+\usepackage{pgfplots} % Package pour tracer des graphiques
+\usepackage{float} % Pour placer les graphes
+\pgfplotsset{compat=1.18} % Version compatible
+\usepgfplotslibrary{polar} % coordonnées polaires
+\usepackage[french]{babel} % pour les guillemets
+
+\renewcommand{\proofname}{Démonstration} % Changer "Proof" en "Démonstration"
+
+\setcounter{tocdepth}{2} % N'affiche que les section et subsection
+\renewcommand{\contentsname}{Table des matières} % Titre personnalisé
+
+% Style de l'encadré pour les définitions
+\newmdenv[
+    linewidth=1pt,
+    roundcorner=5pt,
+    linecolor=black,
+    frametitle={Définition}
+]{definitionbox}
+
+% Style de l'encadré pour les théorèmes
+\newmdenv[
+    linewidth=1pt,
+    roundcorner=5pt,
+    linecolor=black,
+    frametitle={Théorème}
+]{theorembox}
+
+% Style de l'encadré pour les propriétés
+\newmdenv[
+    linewidth=1pt,
+    roundcorner=5pt,
+    linecolor=black,
+    frametitle={Propriété}
+]{propertybox}
+
+% Commande pour la remarque
+\newcommand{\remarque}[1]{%
+    \par\medskip
+    \textbf{\textcolor{black}{Remarque.}} #1%
+    \par\medskip
+}
+
+% Commande pour les corollaires
+\newcommand{\corollaire}[1]{%
+    \par\medskip
+    \textbf{\textcolor{black}{Corollaire.}} #1%
+    \par\medskip
+}
+
+% Commande pour la norme
+\newcommand{\norm}[1]{\left\|#1\right\|}
+
+% Commande pour le produit scalaire
+\newcommand{\dotproduct}[2]{\langle #1, #2 \rangle}
+
+\title{Transformation de Fourier discrète et applications à la compression de son/image avec perte}
+\author{Sylvain Fraresso, Gaël Jean-Albert, \\Titouan Martineau, Thomas Saurel}
+%date
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\end{document}
