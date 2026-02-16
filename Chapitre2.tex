@@ -1,0 +1,46 @@
+\section{Analyse des propriétés de données (images + sons)}
+Commençons par définir ce qu'est un signal. On distingue deux types de signaux :
+\begin{itemize}
+    \item le signal \textbf{analogique} : application $s:\mathbb{R} \to \mathbb{R}$ permettant de représenter une grandeur continue dans le temps (ex: cours d'une action, courant électrique).
+    \item le signal \textbf{discret} : application $s : I \subset\mathbb{Z} \to \mathbb{R}$, noté $s[k], \; k \in I$ ($I$ fini), obtenu par échantillonnage d'un signal analogique (ex:  relevé de température heure pas heure)
+\end{itemize}
+\remarque Nous considèrerons par la suite l'étude de signaux discrets. \\
+Il est à noter que l'étude d'un signal analogique $T$-périodique $t \mapsto s(t)$ peut
+se rapporter à l'étude d'un signal $2\pi$-périodique en effectuant la transformation $t \mapsto s(\frac{T}{2\pi}t)$
+
+Nous pouvons maintenant associer un son réel à un signal analogique et un signal enregistré à un signal discret du fait des limitations matérielles. Nous les noterons $s$ par la suite. Un son physique est continu alors qu'un son échantilloné est discret et représente ainsi une approximation du signal continu associé.
+
+Une image quant à elle peut être associé à une application \\
+$I:\{0,...,W-1\} \times \{0,...,H-1\} \to \mathbb{R}$ avec $W$,$H \in \mathbb{N}^*$ représentant respectivement la largeur et la hauteur de l'image en pixels. Cette application renvoie le niveau de gris du pixel correspondant aux coordonnées passées en entrée. Nous nous limiterons ici au niveau de gris d'une image par souci de clarté mais les images sont facilement généralisables afin d'intégrer le format RGBA par exemple.
+
+
+Nous avons jusqu'ici considéré des signaux réels. Pour l'analyse mathématique et l'étude fréquentielle via les Transformations de Fourier discrètes (TFD), il est souvent pratique de représenter un signal à l'aide de nombres complexes.
+
+Afin de plus tard simplifier les calculs liés aux transformations de Fourier, un signal discret pourra être vu comme une application :
+\begin{align*}
+    s : I \subset \mathbb{Z} \to \mathbb{C}, \quad s[k] = x[k] + iy[k], \quad x[k],y[k] \in \mathbb{R}
+\end{align*}
+
+\remarque
+Pour un signal sonore réel \(s[k] \in \mathbb{R}\), on peut toujours construire un signal complexe associé \(s_\mathbb{C}[k] = s[k] + i\,0\). La partie imaginaire peut ensuite évoluer lors de certaines transformations liées aux transformations de Fourier, mais la partie réelle reste le signal audible.
+
+Un signal sonore simple peut être représenté par une sinusoïde :
+\begin{align*}
+    s(t) = A \cos(\omega t + \phi) = Re(Ae^{i(\omega t + \phi)})
+\end{align*}
+où :
+\begin{itemize}
+    \item $A$ est \textbf{l'amplitude}, correspondant à l'intensité du son (ou la hauteur du signal).
+    \item $\omega$ est \textbf{la fréquence}, indiquant la vitesse des oscillations
+    \item $\phi$ est \textbf{la phase}, qui représente le décalage temporel du signal par rapport à l'origine.
+\end{itemize}
+
+\remarque On peut comparer deux signaux sinusoidaux en étudiant leur déphasage, c'est-à-dire la différence de phase de ces derniers. Le plus simple reste d'adopter une \textbf{visualisation XY} : \\
+Soit deux signaux $s_1 \coloneq a$cos$(\omega t + \phi_1)$ et $s_2 \coloneq b$cos$(\omega t + \phi_b)$ avec $a,b,\omega,\phi_1,\phi_2 \ge 0$. En définissant $X(t)=s_1(t)$ et $Y(t)=s_2(t)$ sur un graphique, on peut obtenir une visualisation du déphasage des signaux : \\
+
+%% AJOUTER IMAGE DEPHASAGE XY
+
+
+Sur ce graphique, chaque point $(X(t), Y(t))$ représente l'état simultané des deux signaux. \\
+- Si les signaux sont en phase ($\phi_1-\phi_2 \equiv 0[\pi])$ : la courbe est une droite diagonale.  \\
+- Si les signaux sont déphasés, la courbe est une ellipse.
