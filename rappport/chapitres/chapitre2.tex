@@ -2,13 +2,20 @@
 
 \subsection{Transformée de Fourier Continue}
 
-Le traitement numérique du signal nécessite une discrétisation pour y appliquer des algorithmes informatiques. Avant d'aborder la transformée de Fourier discrète, il est nécessaire de définir un outil qui permet d'extraire la fréquence d'un signal. Pour une fonction $f$ représentant un signal quelconque, on utilise la définition suivante:
+    Le traitement numérique du signal nécessite une discrétisation pour y appliquer des algorithmes informatiques. Avant d'aborder la transformée de Fourier discrète, il est nécessaire de définir un outil qui permet d'extraire la fréquence d'un signal. Pour une fonction $f$ représentant un signal quelconque, on utilise la définition suivante:
 
 
-Soit $f$ une fonction intégrable sur $\mathbb{R}$. On appelle la \textbf{transformée de Fourier} de $f$ la fonction $TF(f): \mathbb{R} \rightarrow \mathbb{C}$ : \\
-\begin{align*}
-    TF(f) : x \mapsto \int_{-\infty}^{+\infty} f(t) \cdot e^{-i\omega t}dt \ ,\ \ \text{avec } \omega \coloneq 2 \pi x 
-\end{align*}
+    Soit $f$ intégrable sur $\mathbb{R}$. La \textbf{transformée de Fourier} de $f$, notée $TF[f]$, est la fonction :
+    \begin{align*}
+        &TF[f] : x \mapsto \int_{-\infty}^{+\infty} f(t) \cdot e^{-2 i \pi x t}dt
+    \end{align*}
+
+    \remarque{Dans le cadre du traitement de signal, la fonction à laquelle on applique une TF est un signal, $x(t)$, sa transformée de Fourier est alors notée $X(f)$ où $f$ désigne la fréquence. On a :
+    \begin{align*}
+        &X(f) = \int_{-\infty}^{+\infty} x(t) \cdot e^{-i 2 \pi f t} dt \\
+        &X(\omega) = \int_{-\infty}^{+\infty} x(t) \cdot e^{-i \omega t} dt \quad \text{où $\omega = 2 \pi f$, la pulsation}
+    \end{align*}
+    }
 
 
 \subsection{Echantillonnage}
@@ -120,7 +127,8 @@ L'intérêt de la distribution de Dirac est sa capacité à isoler une valeur po
 \begin{align*}
     \int_{-\infty}^{+\infty} g(t) \delta(t-t_0) dt = g(t_0)
 \end{align*}
-\remarque Cette relation s'apparente au produit de convolution entre $g$ et $\delta$. \\
+
+\remarque{Cette relation s'apparente au produit de convolution entre $g$ et $\delta$}
 
 Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extractions de valeurs à l'aide de Dirac. Il est alors pertinent d'introduire la notion de \textbf{peigne de Dirac} de période $T$, noté $\text{III}_{T}$ :
 \begin{align*}

@@ -2,6 +2,7 @@
 
 \usepackage{parskip}
 \usepackage{graphicx} % Required for inserting images
+\usepackage{wrapfig}
 \usepackage{tikz} %tracer graphes
 \usepackage{xcolor} %couleurs
 \usepackage{mathrsfs} % symboles stylés
@@ -21,6 +22,7 @@
 \usepackage{mathtools}
 \everymath{\displaystyle}
 \usepackage[margin=3cm]{geometry}
+\usepackage[T1]{fontenc}
 
 \renewcommand{\proofname}{Démonstration} % Changer "Proof" en "Démonstration"
 
@@ -81,8 +83,9 @@
 \tableofcontents
 \newpage
 
-\section{Introduction/Motivation}
-\input{Chapitre2}
+\input{chapitres/chapitre1}
+
+\input{chapitres/chapitre2}
 
 \end{document}
 
