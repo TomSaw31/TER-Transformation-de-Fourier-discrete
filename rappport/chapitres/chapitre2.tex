@@ -33,79 +33,83 @@ On définit l'action du Dirac $\delta$ sur une fonction $g$ continue en $0$ par 
     \int_{-\infty}^{+\infty}g(t)\delta(t)dt \coloneqq \lim_{\alpha \to 0}  \int_{-\infty}^{+\infty}g(t)f_\alpha(t)dt
 \end{align*}
 Soit $\alpha > 0,$
-\begin{center}
-    $\int_{-\infty}^{+\infty}f_\alpha(t)dt = \int_{-\alpha}^{\alpha}\frac{1}{2\alpha}dt = \frac{1}{2\alpha}\int_{-\alpha}^{\alpha}dt = 1$
-\end{center}
+\begin{align*}
+    \int_{-\infty}^{+\infty}f_\alpha(t)dt = \int_{-\alpha}^{\alpha}\frac{1}{2\alpha}dt = \frac{1}{2\alpha}\int_{-\alpha}^{\alpha}dt = 1
+\end{align*}
 
-\begin{tikzpicture}[scale = 1]
-\begin{axis}[
-    axis lines = middle,
-    unit vector ratio={1 1},
-    xlabel = {$x$},
-    ylabel = {$y$},
-    ymin = -0.5, ymax = 2,
-    xmin = -1, xmax = 1,
-    grid = both,
-    xticklabels = {,,},
-    yticklabels = {,,},
-    tick style = {draw=none}
-]
-\addplot [color=red, thick] coordinates {
-    (-1, 0) 
-    (-0.5, 0) 
-    (-0.5, 0.25) 
-    (0.5, 0.25) 
-    (0.5, 0) 
-    (1, 0)
-};
-\end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}[scale = 1]
-\begin{axis}[
-    axis lines = middle,
-    unit vector ratio={1 1},
-    xlabel = {$x$},
-    ylabel = {$y$},
-    ymin = -0.5, ymax = 2,
-    xmin = -1, xmax = 1,
-    grid = both,
-    xticklabels = {,,},
-    yticklabels = {,,},
-    tick style = {draw=none}
-]
-\addplot [color=red, thick] coordinates {
-    (-1, 0) 
-    (-0.25, 0) 
-    (-0.25, 0.5) 
-    (0.25, 0.5) 
-    (0.25, 0) 
-    (1, 0)
-};
-\end{axis}
-\end{tikzpicture}
-\begin{tikzpicture}[scale = 1]
-\begin{axis}[
-    axis lines = middle,
-    unit vector ratio={1 1},
-    xlabel = {$x$},
-    ylabel = {$y$},
-    ymin = -0.5, ymax = 2,
-    xmin = -1, xmax = 1,
-    grid = both,
-    xticklabels = {,,},
-    yticklabels = {,,},
-    tick style = {draw=none}
-]
-\addplot [color=red, thick] coordinates {
-    (-1, 0) 
-    (-0.125, 0) 
-    (-0.125, 1) 
-    (0.125, 1) 
-    (0.125, 0) 
-    (1, 0)
-};
-\end{axis}
-\end{tikzpicture}
+\begin{figure}
+    \caption{$f_\alpha$ pour $\alpha = 1, \tfrac{1}{2}, \tfrac{1}{4}$}
+    \begin{tikzpicture}[scale = 1]
+        \begin{axis}[
+            axis lines = middle,
+            unit vector ratio={1 1},
+            xlabel = {$x$},
+            ylabel = {$y$},
+            ymin = -0.5, ymax = 2,
+            xmin = -1, xmax = 1,
+            grid = both,
+            xticklabels = {,,},
+            yticklabels = {,,},
+            tick style = {draw=none}
+        ]
+        \addplot [color=red, thick] coordinates {
+            (-1, 0) 
+            (-0.5, 0) 
+            (-0.5, 0.25) 
+            (0.5, 0.25) 
+            (0.5, 0) 
+            (1, 0)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale = 1]
+        \begin{axis}[
+            axis lines = middle,
+            unit vector ratio={1 1},
+            xlabel = {$x$},
+            ylabel = {$y$},
+            ymin = -0.5, ymax = 2,
+            xmin = -1, xmax = 1,
+            grid = both,
+            xticklabels = {,,},
+            yticklabels = {,,},
+            tick style = {draw=none}
+        ]
+        \addplot [color=red, thick] coordinates {
+            (-1, 0) 
+            (-0.25, 0) 
+            (-0.25, 0.5) 
+            (0.25, 0.5) 
+            (0.25, 0) 
+            (1, 0)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale = 1]
+        \begin{axis}[
+            axis lines = middle,
+            unit vector ratio={1 1},
+            xlabel = {$x$},
+            ylabel = {$y$},
+            ymin = -0.5, ymax = 2,
+            xmin = -1, xmax = 1,
+            grid = both,
+            xticklabels = {,,},
+            yticklabels = {,,},
+            tick style = {draw=none}
+        ]
+        \addplot [color=red, thick] coordinates {
+            (-1, 0) 
+            (-0.125, 0) 
+            (-0.125, 1) 
+            (0.125, 1) 
+            (0.125, 0) 
+            (1, 0)
+        };
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
 
 En appliquant la définition de l'action du Dirac sur la fonction constante $g = 1$, on obtient :
 \begin{align*}
