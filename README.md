@@ -1,0 +1,1 @@
+Travail d'Étude et de Recherche (TER) sous la direction de M.Philippe Monnier ayant pour thème la transformée de Fourier discrète et ses applications au traitement de signal, en particulier la compression d'image/son.
