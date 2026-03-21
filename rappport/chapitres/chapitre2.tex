@@ -20,18 +20,15 @@
 
 \subsection{Echantillonnage}
 
-Le passage au numérique demande de ne conserver que certaines valeurs isolées du signal.
-Nous devons introduire la notion de \textbf{distribution de Dirac}.
+Le passage au numérique demande de ne conserver que certaines valeurs isolées du signal. Nous devons alors introduire la notion de \textbf{distribution de Dirac}. Étant donné que la définition la plus utilisée du Dirac sur $\mathbb{R}$ fait appel à des notions de théorie de la mesure et dépasse le cadre de notre étude, on présentera ici une définition plus intuitive et suffisante pour l'utilisation que l'on en fera.
 
-Soit $(f_n)_{n \in \mathbb{N}}$ une famille de fonctions définies par :
+Soit $(f_\alpha)_{\alpha \in \mathbb{\mathbb{R}+}}$ la famille de fonctions définies par :
 \begin{align*}
-    f_\alpha(t) = \left\{ \begin{array}{cl} \frac{1}{2\alpha} & \text{si} \ t \in [-\alpha;\alpha] \\ 0 &  \text{sinon}
+    f_\alpha : t \mapsto \left\{ \begin{array}{cl} \frac{1}{2\alpha} & \text{si} \ t \in [-\alpha;\alpha] \\ 0 &  \text{sinon}
 \end{array} \right.
 \end{align*}
 
-
-
-On définit l'action du Dirac $\delta$ sur une fonction $g$ (continue en $0$) :
+On définit l'action du Dirac $\delta$ sur une fonction $g$ continue en $0$ par :
 \begin{align*}
     \int_{-\infty}^{+\infty}g(t)\delta(t)dt \coloneqq \lim_{\alpha \to 0}  \int_{-\infty}^{+\infty}g(t)f_\alpha(t)dt
 \end{align*}
@@ -110,36 +107,36 @@ Soit $\alpha > 0,$
 \end{axis}
 \end{tikzpicture}
 
-En appliquant la définition de l'action du Dirac sur la fonction constante $g \equiv 1$, on obtient :
-
+En appliquant la définition de l'action du Dirac sur la fonction constante $g = 1$, on obtient :
 \begin{align*}
-    \int_{-\infty}^{+\infty}1 \cdot \delta(t) dt &= \lim_{\alpha \to 0^+} \int_{-\infty}^{+\infty}f_\alpha(t)dt \\
-    \int_{-\infty}^{+\infty}\delta(t) dt &= \lim_{\alpha \to 0^+} 1 = 1
+    \int_{-\infty}^{+\infty} \delta(t) dt = \lim_{\alpha \to 0^+} \int_{-\infty}^{+\infty}f_\alpha(t)dt = \lim_{\alpha \to 0^+} 1 = 1
 \end{align*}
-On peut ainsi voir la distribution de \textbf{Dirac} comme la limite d'une suite de fonctions au sens des distributions et non comme une fonction usuelle. On utilise souvent $\delta$ comme une fonction réelle en traitement du signal mais il s'agit d'une distribution caractérisée par :
+
+En traitement du signal, on utilise souvent $\delta$ comme une fonction réelle, valant 0 partout sauf en 0 où elle vaut \og +$\infty$ \fg,  mais il s'agit bien d'une distribution caractérisée par :
+
 \begin{description}
     \item[Sa concentration] : $\forall t \neq 0, \delta(t) = 0$
     \item[Sa masse] : $\int_{-\infty}^{+\infty}\delta(t)dt = 1$
 \end{description}
 
-~\
-L'intérêt de la distribution de Dirac est sa capacité à isoler une valeur ponctuelle d'un signal. Pour toute fonction $g$ continue en $t_0$, on obtient la relation suivante :
+On fera également attention à garder à l'esprit que la notation sous forme d'intégrale impropre sur $\mathbb{R}$ faisant intervenir le Dirac dans l'intégrande fait toujours référence à la définition de l'action du Dirac sous forme de limite et ne pose aucun problème de convergence du moment que $g$ est intégrable au voisinnage de 0.
+
+L'intérêt, pour le traitement du signal, de la distribution de Dirac est sa capacité à isoler une valeur ponctuelle d'un signal. Pour toute fonction $g$ continue en $t_0$, on obtient la relation suivante :
 \begin{align*}
     \int_{-\infty}^{+\infty} g(t) \delta(t-t_0) dt = g(t_0)
 \end{align*}
+\remarque{Cette relation s'apparente au produit de convolution $g \ast \delta$.}
 
-\remarque{Cette relation s'apparente au produit de convolution entre $g$ et $\delta$}
-
-Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extractions de valeurs à l'aide de Dirac. Il est alors pertinent d'introduire la notion de \textbf{peigne de Dirac} de période $T$, noté $\text{III}_{T}$ :
+Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extractions de valeurs à l'aide de Dirac. Il est alors pertinent d'introduire le \textbf{peigne de Dirac} de période $T$, noté $\Sha_{T}$ :
 \begin{align*}
-    \text{III}_{T}(t) = \sum_{n\in\mathbb{Z}} \delta(t - nT)
+    \Sha_{T}(t) = \sum_{n\in\mathbb{Z}} \delta(t - nT)
 \end{align*}
 
 \begin{center}
     \begin{tikzpicture}[scale=1.5]
 
     \draw[->] (-3,0) -- (3,0) node[right] {$t$};
-    \draw[->] (0,-0.5) -- (0,1.5) node[above] {$\text{III}_{T}(t)$};
+    \draw[->] (0,-0.5) -- (0,1.5) node[above] {$\Sha_{T}(t)$};
 
     \foreach \x in {-2.5, -2, ..., 2.5} {
         \draw[-, blue, thick] (\x, 0) -- (\x, 1);
@@ -149,9 +146,9 @@ Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extrac
 \end{tikzpicture}
 \end{center}
 
-Le signal échantillonné $s_e(t)$ est alors modélisé par le produit du signal analogique $s(t)$ et du peigne de Dirac $\text{III}_{T}$:
+Le signal échantillonné $s_e(t)$ est alors modélisé par le produit du signal analogique $s(t)$ et du peigne de Dirac $\Sha_{T}$:
 \begin{align*}
-    s_e(t) = s(t) \cdot \text{III}_{T}(t) = \sum_{n\in\mathbb{Z}} s(nT) \delta(t - nT)
+    s_e(t) = s(t) \cdot \Sha_{T}(t) = \sum_{n\in\mathbb{Z}} s(nT) \delta(t - nT)
 \end{align*}
 
 Cette expression transforme une fonction continue en une suite de coefficients $s(nT)$ qui pourront être traités avec des méthodes numériques.

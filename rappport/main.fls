@@ -381,6 +381,9 @@ INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\umsb
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cyrillic\wncyr10.tfm
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cyrillic\wncyr10.tfm
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cyrillic\wncyr10.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm1440.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
@@ -402,6 +405,9 @@ INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfon
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cyrillic\wncyr10.tfm
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cyrillic\wncyr10.tfm
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cyrillic\wncyr10.tfm
 OUTPUT main.toc
 INPUT .\chapitres\chapitre1.tex
 INPUT .\chapitres\chapitre1.tex
@@ -465,3 +471,5 @@ INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsf
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm7.pfb
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cyrillic\wncyr10.pfb
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cyrillic\wncyr10.pfb

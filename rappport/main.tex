@@ -23,6 +23,10 @@
 \everymath{\displaystyle}
 \usepackage[margin=3cm]{geometry}
 \usepackage[T1]{fontenc}
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathord}{mcy}{"58} % symbole Sha du peigne de Dirac
 
 \renewcommand{\proofname}{Démonstration} % Changer "Proof" en "Démonstration"
 
