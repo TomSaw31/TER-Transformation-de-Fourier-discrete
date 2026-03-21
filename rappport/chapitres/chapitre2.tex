@@ -159,19 +159,20 @@ Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extrac
     \Sha_{T}(t) = \sum_{n\in\mathbb{Z}} \delta(t - nT)
 \end{align*}
 
-\begin{center}
+\begin{figure}[h]
+    \begin{center}
+    \caption{Peigne de Dirac de période $T$}
     \begin{tikzpicture}[scale=1.5]
-
-    \draw[->] (-3,0) -- (3,0) node[right] {$t$};
-    \draw[->] (0,-0.5) -- (0,1.5) node[above] {$\Sha_{T}(t)$};
-
-    \foreach \x in {-2.5, -2, ..., 2.5} {
-        \draw[-, blue, thick] (\x, 0) -- (\x, 1);
-        \draw[dashed, blue, thick] (\x, 1) -- (\x, 1.5);
-    }
-    \draw[<->] (1, -0.2) -- (1.5, -0.2) node[midway, below, font=\tiny] {$T$};
-\end{tikzpicture}
-\end{center}
+        \draw[->] (-3,0) -- (3,0) node[right] {$t$};
+        \draw[->] (0,-0.5) -- (0,1.5) node[above] {$\Sha_{T}(t)$};
+        \foreach \x in {-2.5, -2, ..., 2.5} {
+            \draw[-, blue, thick] (\x, 0) -- (\x, 1);
+            \draw[dashed, blue, thick] (\x, 1) -- (\x, 1.5);
+        }
+        \draw[<->] (1, -0.2) -- (1.5, -0.2) node[midway, below, font=\tiny] {$T$};
+    \end{tikzpicture}
+    \end{center}
+\end{figure}
 
 Le signal échantillonné $s_e(t)$ est alors modélisé par le produit du signal analogique $s(t)$ et du peigne de Dirac $\Sha_{T}$:
 \begin{align*}
@@ -180,22 +181,25 @@ Le signal échantillonné $s_e(t)$ est alors modélisé par le produit du signal
 
 Cette expression transforme une fonction continue en une suite de coefficients $s(nT)$ qui pourront être traités avec des méthodes numériques.
 
-\begin{center}
-    \begin{tikzpicture}[scale=1.5]
+\begin{figure}[ht]
+    \caption{Échantillonnage d'une fonction continue}
+    \begin{center}
+        \begin{tikzpicture}[scale=1.5]
 
-    \draw[->] (-0.5,0) -- (6.5,0) node[right] {$t$};
-    \draw[->] (0,-1.2) -- (0,1.5) node[above] {$s(t)$};
+        \draw[->] (-0.5,0) -- (6.5,0) node[right] {$t$};
+        \draw[->] (0,-1.2) -- (0,1.5) node[above] {$s(t)$};
 
-    \draw[thick, blue, domain=0:6, samples=100] 
-        plot (\x, {2*exp(-\x/4)*sin(2*\x r)});
-    \node[blue] at (5,1) {Signal continu $s(t)$};
+        \draw[thick, blue, domain=0:6, samples=100] 
+            plot (\x, {2*exp(-\x/4)*sin(2*\x r)});
+        \node[blue] at (5,1) {Signal continu $s(t)$};
 
-    \foreach \x in {0, 0.5, ..., 6} {
-        \pgfmathsetmacro{\y}{2*exp(-\x/4)*sin(2*\x r)}
-        \draw[->, black, thick] (\x, 0) -- (\x, \y);
-        \fill[red] (\x, \y) circle (1.5pt);
-    }
-    \node[red] at (3,-1.5) {Échantillons $s(n T)$};
-    \draw[<->] (1, -0.2) -- (1.5, -0.2) node[midway, below, font=\tiny] {$T$};
-\end{tikzpicture}
-\end{center}
+        \foreach \x in {0, 0.5, ..., 6} {
+            \pgfmathsetmacro{\y}{2*exp(-\x/4)*sin(2*\x r)}
+            \draw[->, black, thick] (\x, 0) -- (\x, \y);
+            \fill[red] (\x, \y) circle (1.5pt);
+        }
+        \node[red] at (3,-1.5) {Échantillons $s(n T)$};
+        \draw[<->] (1, -0.2) -- (1.5, -0.2) node[midway, below, font=\tiny] {$T$};
+    \end{tikzpicture}
+    \end{center}
+\end{figure}
