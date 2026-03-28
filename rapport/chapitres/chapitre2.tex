@@ -1,6 +1,36 @@
 \section{Transformée de Fourier Discrète}
 
 \subsection{Transformée de Fourier Continue}
+    Commençons par introduire la notion de signal. On appelle \textbf{signal analogique} ou \textbf{continu}, une fonction de $\mathbb{R}$, représentant le temps, vers $\mathbb{C}$. Bien que les mesures physiques soient réelles, un signal complexe permet de conserver la \textbf{phase} à travers son argument et son \textbf{amplitude} à travers son module. \\
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[very thin, gray!30] (-1,-2.5) grid (7.5,2.5);
+            \draw[->, thick] (-1,0) -- (7.5,0) node[right] {$t$};
+            \draw[->, thick] (0,-2.5) -- (0,2.5) node[above] {$s(t)$};
+            
+            \draw[blue, very thick, samples=100, domain=-0.5:7.5] 
+                plot (\x, {1.67*sin(deg(2*\x - 6.7))});
+            
+            \draw[violet, very thick, dashed, samples=100, domain=-0.5:7.5] 
+                plot (\x, {1.67*cos(deg(2*\x - 6.7))});
+            
+            \draw[red, <->, thick] (4.135, 0) -- (4.135, 1.67) 
+                node[midway, right] {$A$ Amplitude};
+            
+            \coordinate (Origin) at (0, 0.5);
+            \coordinate (Peak) at (0.4, 0.5);
+            
+            \draw[orange, <->, thick] (0, 1.68) -- (1, 1.68) 
+                node[midway, above, font=\small] {Phase $\phi$};
+            
+            \node[violet,draw, fill=white, anchor=south east] at (7.5, -1.9) 
+                {$\Re (s(t)) = A\cos(2 \pi f t + \phi)$};
+                
+            \node[blue,draw, fill=white, anchor=south east] at (7.5, -2.5) 
+                {$\Im (s(t)) = A\sin(2 \pi f t + \phi)$};
+        \end{tikzpicture}
+    \end{center}
+    Le signal $s(t) = A e^{i(2\pi ft + \phi)}$ étudié précédemment est un signal dit "pur". En réalité, la plupart des signaux ont des formes beaucoup plus complexes et ne ressemblent pas à une simple sinusoïde. Le mathématicien Joseph Fourier a démontré que tout signal peut s'écrire comme une somme d'exponentielles complexes. Ainsi, un signal est caractérisé par sa phase, som amplitude mais surtout par sa fréquence (largeur des oscillations). L'enjeu de cette partie va être d'introduire des outils permettant de passer du domaine caractérisé par un temps $t$ vers un domaine dit fréquentiel, paramétré par des fréquences.
 
     Le traitement numérique du signal nécessite une discrétisation pour y appliquer des algorithmes informatiques. Avant d'aborder la transformée de Fourier discrète, il est nécessaire de définir un outil qui permet d'extraire la fréquence d'un signal. Pour une fonction $f$ représentant un signal quelconque, on utilise la définition suivante:
 
@@ -181,7 +211,7 @@ Le signal échantillonné $s_e(t)$ est alors modélisé par le produit du signal
 
 Cette expression transforme une fonction continue en une suite de coefficients $s(nT)$ qui pourront être traités avec des méthodes numériques.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \caption{Échantillonnage d'une fonction continue}
     \begin{center}
         \begin{tikzpicture}[scale=1.5]
@@ -203,3 +233,31 @@ Cette expression transforme une fonction continue en une suite de coefficients $
     \end{tikzpicture}
     \end{center}
 \end{figure}
+
+Pour qu'un signal soit traitable par un algorithme informatique, il faut qu'il comporte un nombre fini de valeurs. Il suffit alors de considérer un signal continu sur un intervalle fixe puis de l'échantillonner pour ne garder qu'un nombre fini $N$ de valeurs. On peut alors considérer ce signal échantillonné fini comme un vecteur :
+\begin{align*}
+    x = (s(0),s(T),s(2T),...,s((N-1)T) =  (x_0,x_1,...,x_{N_-1}) \in \mathbb{C}^N
+\end{align*}
+
+\subsection{Transformée de Fourier Discrète}
+
+Soit $x = (x_0, x_1, \dots, x_{N-1}) \in \mathbb{C}^N$ le vecteur du signal échantillonné. On appelle \textbf{Transformée de Fourier Discrète} de $x$, le vecteur $X = (X_0, X_1,..., X_{N-1}) \in \mathbb{C}^N$ avec :$$X_k = \sum_{n=0}^{N-1} x_n e^{-i \frac{2\pi}{N} kn} \quad \forall k \in \{0, \dots, N-1\}$$
+
+Cette formule permet de passer du domaine temporel $(x_k)$ au domaine fréquentiel $(X_k)$.
+
+De manière analogue, on peut définir la {Transformée de Fourier Discrète Inverse} qui permet de revenir du domaine fréquentiel au domaine temporel : 
+$$x_k = \dfrac{1}{N}\sum_{n=0}^{N-1}X_ne^{i \frac{2 \pi}{N}kn}\quad \forall k \in \{0, \dots, N-1\}$$
+
+On a alors TFDI(TFD($x_n$)) = $x_n$
+\begin{proof}
+    Soit $(x_0,x_1,...,x_{N_-1}) \in \mathbb{C}^N$. Soit $n < N$.
+    $$x_n = \dfrac{1}{N}\sum_{k=0}^{N-1}X_ke^{i \frac{2 \pi}{N}kn}
+    =\dfrac{1}{N}\sum_{k=0}^{N-1}\Big(\normalsize\sum_{m=0}^{N-1} x_m e^{-i \frac{2\pi}{N} km}\Big)e^{i \frac{2 \pi}{N}kn}
+    = \dfrac{1}{N}\sum_{m=0}^{N-1}x_m\Big(\normalsize\sum_{k=0}^{N-1} e^{-i \frac{2\pi}{N} k(n-m)}\Big)$$
+    On remarque que $S_N = \sum_{m=0}^{N-1}e^{-i \frac{2\pi}{N} k(n-m)}$ est une suite géométrique de raison $q = e^{-i \frac{2\pi}{N} k(n-m)}$
+    \begin{description}
+        \item[Si $n=m$ : ] $q = e^0 = 1 \implies S_N = \sum_{k=0}^{N-1} 1 = N$  
+        \item[Si $n\neq m$ : ] $S_N=\frac{1-q^N}{1-q}$ or $q^N = e^{i2\pi(n-m)} = 1$ donc $S_N = 0$ 
+    \end{description}
+    $$\implies x_n =\dfrac{1}{N}\sum_{m=0}^{N-1}x_m \cdot N \delta_{nm} = \dfrac{1}{N}x_n\cdot N = x_n$$
+\end{proof}
