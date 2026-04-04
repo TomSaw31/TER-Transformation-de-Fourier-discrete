@@ -259,21 +259,20 @@ Cette formule permet de passer du domaine temporel $(x_k)$ au domaine fréquenti
 De manière analogue, on peut définir la {Transformée de Fourier Discrète Inverse} qui permet de revenir du domaine fréquentiel au domaine temporel :
 $$x_k = \dfrac{1}{N}\sum_{n=0}^{N-1}X_ne^{i \frac{2 \pi}{N}kn}\quad \forall k \in \{0, \dots, N-1\}
 $$
-
 On a alors TFDI(TFD($x_n$)) = $x_n$
 \begin{proof}
     Soit $(x_0,x_1,...,x_{N-1}) \in \mathbb{C}^N$. Soit $0 \leq n < N$.
 
     \begin{align*}
-        x_n &= \dfrac{1}{N} \sum_{k=0}^{N-1} X_k e^{i \frac{2 \pi}{N} kn} \\
-        &=\dfrac{1}{N} \sum_{k=0}^{N-1} \left(\sum_{m=0}^{N-1} x_m e^{-i \frac{2\pi}{N} km}\right) e^{i \frac{2 \pi}{N}kn} \\
-        &= \dfrac{1}{N} \sum_{m=0}^{N-1} x_m \left( \sum_{k=0}^{N-1} e^{-i \frac{2\pi}{N} k(n-m)} \right)
+        TFDI(TFD(x_n))&=\dfrac{1}{N} \sum_{k=0}^{N-1} \left(\sum_{m=0}^{N-1} x_m e^{-i \frac{2\pi}{N} km}\right) e^{i \frac{2 \pi}{N}kn} \\
+        &= \dfrac{1}{N} \sum_{m=0}^{N-1} x_m \left( \sum_{k=0}^{N-1} e^{-i \frac{2\pi}{N} k(m-n)} \right)
     \end{align*}
-
-    On remarque que $S_N = \sum_{m=0}^{N-1}e^{-i \frac{2\pi}{N} k(n-m)}$ est une suite géométrique de raison $q = e^{-i \frac{2\pi}{N} k(n-m)}$
+    Posons :
+    $$S_N \coloneq \sum_{k=0}^{N-1}e^{-i \frac{2\pi}{N} k(m-n)}$$
+    On remarque que $S_N$ est une somme partielle d'une suite géométrique de raison $q = e^{-i \frac{2\pi}{N} (m-n)}$.
     \begin{description}
         \item[Si $n=m$, ] $q = e^0 = 1 \implies S_N = \sum_{k=0}^{N-1} 1 = N$  
-        \item[Si $n\neq m$, ] $S_N=\frac{1-q^N}{1-q}$ or, $q^N = e^{i2\pi(n-m)} = 1$ donc $S_N = 0$ 
+        \item[Si $n\neq m$, ] $S_N=\frac{1-q^N}{1-q}$ or, $q^N = e^{-i2\pi(m-n)} = 1$ car $m-n\in \mathbb{Z}$ donc $S_N = 0$ 
     \end{description}
-    $$\implies x_n =\dfrac{1}{N}\sum_{m=0}^{N-1}x_m \cdot N \delta_{nm} = \dfrac{1}{N}x_n\cdot N = x_n$$
+    $$\implies TFDI(TFD(x_n)) =\dfrac{1}{N}\sum_{m=0}^{N-1}x_m \cdot N \delta_{nm} = \dfrac{1}{N}x_n\cdot N = x_n$$
 \end{proof}
