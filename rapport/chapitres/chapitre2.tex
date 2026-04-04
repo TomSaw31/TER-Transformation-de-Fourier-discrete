@@ -1,10 +1,14 @@
 \section{Transformée de Fourier Discrète}
 
 \subsection{Transformée de Fourier Continue}
-    Commençons par introduire la notion de signal. On appelle \textbf{signal analogique} ou \textbf{continu}, une fonction de $\mathbb{R}$, représentant le temps, vers $\mathbb{C}$. Bien que les mesures physiques soient réelles, un signal complexe permet de conserver la \textbf{phase} à travers son argument et son \textbf{amplitude} à travers son module. \\
-    \begin{center}
+
+    Commençons par introduire la notion de signal. On appelle \textbf{signal analogique} ou \textbf{continu}, une fonction de $\mathbb{R}$, représentant le temps, vers $\mathbb{C}$. Bien que les mesures physiques soient réelles, un signal complexe permet de conserver la \textbf{phase} au travers de son argument et son \textbf{amplitude} au travers de son module.
+
+    \begin{figure}[H]
+        \caption{Parties réelle et imaginaire d'un signal complexe}
+        \begin{center}
         \begin{tikzpicture}
-            \draw[very thin, gray!30] (-1,-2.5) grid (7.5,2.5);
+            \draw[very thin, gray!30] (-1,-3.1) grid (7.5,2.5);
             \draw[->, thick] (-1,0) -- (7.5,0) node[right] {$t$};
             \draw[->, thick] (0,-2.5) -- (0,2.5) node[above] {$s(t)$};
             
@@ -14,23 +18,27 @@
             \draw[violet, very thick, dashed, samples=100, domain=-0.5:7.5] 
                 plot (\x, {1.67*cos(deg(2*\x - 6.7))});
             
-            \draw[red, <->, thick] (4.135, 0) -- (4.135, 1.67) 
-                node[midway, right] {$A$ Amplitude};
+            \draw[red, <->, thick] (1, 0) -- (1, 1.67) 
+                node[above, above, font=\small] {Amplitude $A$};
             
             \coordinate (Origin) at (0, 0.5);
             \coordinate (Peak) at (0.4, 0.5);
             
-            \draw[orange, <->, thick] (0, 1.68) -- (1, 1.68) 
+            \draw[orange, <->, thick] (3.335, 1.68) -- (4.135, 1.68) 
                 node[midway, above, font=\small] {Phase $\phi$};
             
-            \node[violet,draw, fill=white, anchor=south east] at (7.5, -1.9) 
+            \node[violet,draw, fill=white, anchor=south east] at (7.5, -2.5) 
                 {$\Re (s(t)) = A\cos(2 \pi f t + \phi)$};
                 
-            \node[blue,draw, fill=white, anchor=south east] at (7.5, -2.5) 
+            \node[blue,draw, fill=white, anchor=south east] at (7.5, -3.1) 
                 {$\Im (s(t)) = A\sin(2 \pi f t + \phi)$};
         \end{tikzpicture}
-    \end{center}
-    Le signal $s(t) = A e^{i(2\pi ft + \phi)}$ étudié précédemment est un signal dit "pur". En réalité, la plupart des signaux ont des formes beaucoup plus complexes et ne ressemblent pas à une simple sinusoïde. Le mathématicien Joseph Fourier a démontré que tout signal peut s'écrire comme une somme d'exponentielles complexes. Ainsi, un signal est caractérisé par sa phase, som amplitude mais surtout par sa fréquence (largeur des oscillations). L'enjeu de cette partie va être d'introduire des outils permettant de passer du domaine caractérisé par un temps $t$ vers un domaine dit fréquentiel, paramétré par des fréquences.
+        \end{center}
+    \end{figure}
+
+    \vspace{0.5cm}
+
+    Le signal $s(t) = A e^{i(2\pi ft + \phi)}$ représenté ici est un signal dit "pur". En réalité, la plupart des signaux ont des formes beaucoup plus complexes et ne ressemblent pas à une simple sinusoïde. Le mathématicien Joseph Fourier a démontré que la plupart des signaux que l'on souhaite étudier dans le cadre du traitement de signal peut s'écrire comme une somme d'exponentielles complexes. Ainsi, un signal est caractérisé par sa phase, som amplitude mais surtout par sa, ou ses, fréquences (largeur des oscillations). L'enjeu de cette section va être d'introduire des outils permettant de passer du domaine temporel, où le signal est caractérisé par le temps $t$, vers le domaine fréquentiel, paramétré par des fréquences.
 
     Le traitement numérique du signal nécessite une discrétisation pour y appliquer des algorithmes informatiques. Avant d'aborder la transformée de Fourier discrète, il est nécessaire de définir un outil qui permet d'extraire la fréquence d'un signal. Pour une fonction $f$ représentant un signal quelconque, on utilise la définition suivante:
 
@@ -50,7 +58,7 @@
 
 \subsection{Echantillonnage}
 
-Le passage au numérique demande de ne conserver que certaines valeurs isolées du signal. Nous devons alors introduire la notion de \textbf{distribution de Dirac}. Étant donné que la définition la plus utilisée du Dirac sur $\mathbb{R}$ fait appel à des notions de théorie de la mesure et dépasse le cadre de notre étude, on présentera ici une définition plus intuitive et suffisante pour l'utilisation que l'on en fera.
+Le passage au numérique demande de ne conserver que certaines valeurs isolées du signal. Nous devons alors introduire la notion de \textbf{distribution de Dirac}. Dans le cadre de notre étude, nous utiliserons une définition alternative, plus faible que la définition usuelle du Dirac. Cette définition plus intuitive est parfaitement suffisante pour l'utilisation que l'on en fera et ne fait pas appel à la théorie de la mesure.
 
 Soit $(f_\alpha)_{\alpha \in \mathbb{\mathbb{R}+}}$ la famille de fonctions définies par :
 \begin{align*}
@@ -58,7 +66,7 @@ Soit $(f_\alpha)_{\alpha \in \mathbb{\mathbb{R}+}}$ la famille de fonctions déf
 \end{array} \right.
 \end{align*}
 
-On définit l'action du Dirac $\delta$ sur une fonction $g$ continue en $0$ par :
+On définit l'action du Dirac $\delta$ sur une fonction $g$, continue en $0$, par :
 \begin{align*}
     \int_{-\infty}^{+\infty}g(t)\delta(t)dt \coloneqq \lim_{\alpha \to 0}  \int_{-\infty}^{+\infty}g(t)f_\alpha(t)dt
 \end{align*}
@@ -67,7 +75,7 @@ Soit $\alpha > 0,$
     \int_{-\infty}^{+\infty}f_\alpha(t)dt = \int_{-\alpha}^{\alpha}\frac{1}{2\alpha}dt = \frac{1}{2\alpha}\int_{-\alpha}^{\alpha}dt = 1
 \end{align*}
 
-\begin{figure}
+\begin{figure}[H]
     \caption{$f_\alpha$ pour $\alpha = 1, \tfrac{1}{2}, \tfrac{1}{4}$}
     \begin{tikzpicture}[scale = 1]
         \begin{axis}[
@@ -146,7 +154,7 @@ En appliquant la définition de l'action du Dirac sur la fonction constante $g =
     \int_{-\infty}^{+\infty} \delta(t) dt = \lim_{\alpha \to 0^+} \int_{-\infty}^{+\infty}f_\alpha(t)dt = \lim_{\alpha \to 0^+} 1 = 1
 \end{align*}
 
-En traitement du signal, on utilise souvent $\delta$ comme une fonction réelle, valant 0 partout sauf en 0 où elle vaut \og +$\infty$ \fg,  mais il s'agit bien d'une distribution caractérisée par :
+En traitement du signal, on considère souvent abusivement que $\delta$ est une fonction réelle, valant 0 partout sauf en 0 où elle vaut \og +$\infty$ \fg,  mais il s'agit bien d'une distribution caractérisée par :
 
 \begin{description}
     \item[Sa concentration] : $\forall t \neq 0, \delta(t) = 0$
@@ -184,12 +192,12 @@ L'intérêt, pour le traitement du signal, de la distribution de Dirac est sa ca
 
 \remarque{Cette relation s'apparente au produit de convolution $g \ast \delta$.}
 
-Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extractions de valeurs à l'aide de Dirac. Il est alors pertinent d'introduire le \textbf{peigne de Dirac} de période $T$, noté $\Sha_{T}$ :
+Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extractions de valeurs à l'aide du Dirac. Il est alors pertinent d'introduire le \textbf{peigne de Dirac} de période $T$, noté $\Sha_{T}$ :
 \begin{align*}
     \Sha_{T}(t) = \sum_{n\in\mathbb{Z}} \delta(t - nT)
 \end{align*}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \begin{center}
     \caption{Peigne de Dirac de période $T$}
     \begin{tikzpicture}[scale=1.5]
@@ -199,7 +207,7 @@ Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extrac
             \draw[-, blue, thick] (\x, 0) -- (\x, 1);
             \draw[dashed, blue, thick] (\x, 1) -- (\x, 1.5);
         }
-        \draw[<->] (1, -0.2) -- (1.5, -0.2) node[midway, below, font=\tiny] {$T$};
+        \draw[<->] (1, -0.15) -- (1.5, -0.15) node[midway, below, font=\tiny] {$T$};
     \end{tikzpicture}
     \end{center}
 \end{figure}
@@ -234,30 +242,38 @@ Cette expression transforme une fonction continue en une suite de coefficients $
     \end{center}
 \end{figure}
 
-Pour qu'un signal soit traitable par un algorithme informatique, il faut qu'il comporte un nombre fini de valeurs. Il suffit alors de considérer un signal continu sur un intervalle fixe puis de l'échantillonner pour ne garder qu'un nombre fini $N$ de valeurs. On peut alors considérer ce signal échantillonné fini comme un vecteur :
+Pour qu'un signal soit traitable par un algorithme informatique, il faut qu'il comporte un nombre fini de valeurs. Il suffit alors de considérer un signal continu sur un intervalle de longueur fini puis de l'échantillonner pour ne garder qu'un nombre fini $N$ de valeurs. On peut alors considérer ce signal échantillonné fini comme un vecteur :
 \begin{align*}
-    x = (s(0),s(T),s(2T),...,s((N-1)T) =  (x_0,x_1,...,x_{N_-1}) \in \mathbb{C}^N
+    x = (s(0),s(T),s(2T),...,s((N-1)T)) =  (x_0,x_1,...,x_{N-1}) \in \mathbb{C}^N
 \end{align*}
 
 \subsection{Transformée de Fourier Discrète}
 
-Soit $x = (x_0, x_1, \dots, x_{N-1}) \in \mathbb{C}^N$ le vecteur du signal échantillonné. On appelle \textbf{Transformée de Fourier Discrète} de $x$, le vecteur $X = (X_0, X_1,..., X_{N-1}) \in \mathbb{C}^N$ avec :$$X_k = \sum_{n=0}^{N-1} x_n e^{-i \frac{2\pi}{N} kn} \quad \forall k \in \{0, \dots, N-1\}$$
+Soit $x = (x_0, x_1, \dots, x_{N-1}) \in \mathbb{C}^N$ le vecteur du signal échantillonné. On appelle \textbf{Transformée de Fourier Discrète} de $x$, le vecteur $X = (X_0, X_1,..., X_{N-1}) \in \mathbb{C}^N$ avec :
+$$
+X_k = \sum_{n=0}^{N-1} x_n e^{-i \frac{2\pi}{N} kn} \quad \forall k \in \{0, \dots, N-1\}
+$$
 
 Cette formule permet de passer du domaine temporel $(x_k)$ au domaine fréquentiel $(X_k)$.
 
-De manière analogue, on peut définir la {Transformée de Fourier Discrète Inverse} qui permet de revenir du domaine fréquentiel au domaine temporel : 
-$$x_k = \dfrac{1}{N}\sum_{n=0}^{N-1}X_ne^{i \frac{2 \pi}{N}kn}\quad \forall k \in \{0, \dots, N-1\}$$
+De manière analogue, on peut définir la {Transformée de Fourier Discrète Inverse} qui permet de revenir du domaine fréquentiel au domaine temporel :
+$$x_k = \dfrac{1}{N}\sum_{n=0}^{N-1}X_ne^{i \frac{2 \pi}{N}kn}\quad \forall k \in \{0, \dots, N-1\}
+$$
 
 On a alors TFDI(TFD($x_n$)) = $x_n$
 \begin{proof}
-    Soit $(x_0,x_1,...,x_{N_-1}) \in \mathbb{C}^N$. Soit $n < N$.
-    $$x_n = \dfrac{1}{N}\sum_{k=0}^{N-1}X_ke^{i \frac{2 \pi}{N}kn}
-    =\dfrac{1}{N}\sum_{k=0}^{N-1}\Big(\normalsize\sum_{m=0}^{N-1} x_m e^{-i \frac{2\pi}{N} km}\Big)e^{i \frac{2 \pi}{N}kn}
-    = \dfrac{1}{N}\sum_{m=0}^{N-1}x_m\Big(\normalsize\sum_{k=0}^{N-1} e^{-i \frac{2\pi}{N} k(n-m)}\Big)$$
+    Soit $(x_0,x_1,...,x_{N-1}) \in \mathbb{C}^N$. Soit $0 \leq n < N$.
+
+    \begin{align*}
+        x_n &= \dfrac{1}{N} \sum_{k=0}^{N-1} X_k e^{i \frac{2 \pi}{N} kn} \\
+        &=\dfrac{1}{N} \sum_{k=0}^{N-1} \left(\sum_{m=0}^{N-1} x_m e^{-i \frac{2\pi}{N} km}\right) e^{i \frac{2 \pi}{N}kn} \\
+        &= \dfrac{1}{N} \sum_{m=0}^{N-1} x_m \left( \sum_{k=0}^{N-1} e^{-i \frac{2\pi}{N} k(n-m)} \right)
+    \end{align*}
+
     On remarque que $S_N = \sum_{m=0}^{N-1}e^{-i \frac{2\pi}{N} k(n-m)}$ est une suite géométrique de raison $q = e^{-i \frac{2\pi}{N} k(n-m)}$
     \begin{description}
-        \item[Si $n=m$ : ] $q = e^0 = 1 \implies S_N = \sum_{k=0}^{N-1} 1 = N$  
-        \item[Si $n\neq m$ : ] $S_N=\frac{1-q^N}{1-q}$ or $q^N = e^{i2\pi(n-m)} = 1$ donc $S_N = 0$ 
+        \item[Si $n=m$, ] $q = e^0 = 1 \implies S_N = \sum_{k=0}^{N-1} 1 = N$  
+        \item[Si $n\neq m$, ] $S_N=\frac{1-q^N}{1-q}$ or, $q^N = e^{i2\pi(n-m)} = 1$ donc $S_N = 0$ 
     \end{description}
     $$\implies x_n =\dfrac{1}{N}\sum_{m=0}^{N-1}x_m \cdot N \delta_{nm} = \dfrac{1}{N}x_n\cdot N = x_n$$
 \end{proof}
