@@ -1,0 +1,58 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{poly-fourier}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=a3b5c482960a4655505372c70ea7586d}{%
+           family={Fabre},
+           familyi={F\bibinitperiod},
+           given={Sylvie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c76525773e570453c98e470091b0a5bb}{%
+           family={Morel},
+           familyi={M\bibinitperiod},
+           given={Jean-Michel},
+           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=80ad05efddd193b485bc65a52ffc8358}{%
+           family={Gousseau},
+           familyi={G\bibinitperiod},
+           given={Yann},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec1787e19ff7c4f723298dbed098924c}
+      \strng{fullhash}{ec1787e19ff7c4f723298dbed098924c}
+      \strng{fullhashraw}{ec1787e19ff7c4f723298dbed098924c}
+      \strng{bibnamehash}{ec1787e19ff7c4f723298dbed098924c}
+      \strng{authorbibnamehash}{ec1787e19ff7c4f723298dbed098924c}
+      \strng{authornamehash}{ec1787e19ff7c4f723298dbed098924c}
+      \strng{authorfullhash}{ec1787e19ff7c4f723298dbed098924c}
+      \strng{authorfullhashraw}{ec1787e19ff7c4f723298dbed098924c}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Analyse hilbertienne et analyse de Fourier}
+      \field{year}{2013}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

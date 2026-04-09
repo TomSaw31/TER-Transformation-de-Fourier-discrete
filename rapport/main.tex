@@ -14,6 +14,7 @@
 \usepackage{amsthm,amsmath} %carré stylé à la fin démo
 \usepackage{mdframed} % Pour les encadrements
 \usepackage{hyperref} % hyperliens pour référencer les sections
+\usepackage{url}
 \usepackage{pgfplots} % Package pour tracer des graphiques
 \usepackage{float} % Pour placer les graphes
 \pgfplotsset{compat=1.18} % Version compatible
@@ -23,6 +24,8 @@
 \everymath{\displaystyle}
 \usepackage[margin=3cm]{geometry}
 \usepackage[T1]{fontenc}
+\usepackage[backend=biber, language=french]{biblatex} % bibliographie en fr
+\addbibresource{refs.bib}
 \DeclareFontFamily{U}{wncy}{}
 \DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
 \DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
@@ -112,6 +115,9 @@
 
 \input{chapitres/chapitre2}
 
+\cite{poly-fourier}
+
+\printbibliography
 
 \end{document}
 
