@@ -155,9 +155,6 @@ INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amss
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\ulem\ulem.sty
-INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\ulem\ulem.sty
-INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\latex-fonts\lasy6.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\cancel\cancel.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\amscls\amsthm.sty
@@ -464,11 +461,14 @@ INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfon
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cyrillic\wncyr10.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecrm0500.tfm
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ecti1000.tfm
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\ectt1000.tfm
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
+INPUT C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk
+INPUT C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1000.pk
 INPUT C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
 INPUT C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk
 INPUT C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk

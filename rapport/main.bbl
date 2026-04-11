@@ -19,38 +19,193 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{poly-fourier}{misc}{}{}
-      \name{author}{3}{}{%
-        {{hash=a3b5c482960a4655505372c70ea7586d}{%
-           family={Fabre},
-           familyi={F\bibinitperiod},
-           given={Sylvie},
-           giveni={S\bibinitperiod}}}%
-        {{hash=c76525773e570453c98e470091b0a5bb}{%
-           family={Morel},
-           familyi={M\bibinitperiod},
-           given={Jean-Michel},
-           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
-        {{hash=80ad05efddd193b485bc65a52ffc8358}{%
-           family={Gousseau},
-           familyi={G\bibinitperiod},
-           given={Yann},
-           giveni={Y\bibinitperiod}}}%
+    \entry{dirac}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f66f93ab8653503571a5308009aa6fd6}{%
+           family={Péchaud},
+           familyi={P\bibinitperiod},
+           given={Mickaël},
+           giveni={M\bibinitperiod}}}%
       }
-      \strng{namehash}{ec1787e19ff7c4f723298dbed098924c}
-      \strng{fullhash}{ec1787e19ff7c4f723298dbed098924c}
-      \strng{fullhashraw}{ec1787e19ff7c4f723298dbed098924c}
-      \strng{bibnamehash}{ec1787e19ff7c4f723298dbed098924c}
-      \strng{authorbibnamehash}{ec1787e19ff7c4f723298dbed098924c}
-      \strng{authornamehash}{ec1787e19ff7c4f723298dbed098924c}
-      \strng{authorfullhash}{ec1787e19ff7c4f723298dbed098924c}
-      \strng{authorfullhashraw}{ec1787e19ff7c4f723298dbed098924c}
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \strng{namehash}{f66f93ab8653503571a5308009aa6fd6}
+      \strng{fullhash}{f66f93ab8653503571a5308009aa6fd6}
+      \strng{fullhashraw}{f66f93ab8653503571a5308009aa6fd6}
+      \strng{bibnamehash}{f66f93ab8653503571a5308009aa6fd6}
+      \strng{authorbibnamehash}{f66f93ab8653503571a5308009aa6fd6}
+      \strng{authornamehash}{f66f93ab8653503571a5308009aa6fd6}
+      \strng{authorfullhash}{f66f93ab8653503571a5308009aa6fd6}
+      \strng{authorfullhashraw}{f66f93ab8653503571a5308009aa6fd6}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Analyse hilbertienne et analyse de Fourier}
-      \field{year}{2013}
+      \field{title}{Qu'est-ce-qu'un Dirac ?}
+      \field{year}{2018}
+      \field{dateera}{ce}
+    \endentry
+    \entry{sinusoidal}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c627332ac7be921665e8c6fe47886d25}{%
+           family={Roussel},
+           familyi={R\bibinitperiod},
+           given={Jimmy},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c627332ac7be921665e8c6fe47886d25}
+      \strng{fullhash}{c627332ac7be921665e8c6fe47886d25}
+      \strng{fullhashraw}{c627332ac7be921665e8c6fe47886d25}
+      \strng{bibnamehash}{c627332ac7be921665e8c6fe47886d25}
+      \strng{authorbibnamehash}{c627332ac7be921665e8c6fe47886d25}
+      \strng{authornamehash}{c627332ac7be921665e8c6fe47886d25}
+      \strng{authorfullhash}{c627332ac7be921665e8c6fe47886d25}
+      \strng{authorfullhashraw}{c627332ac7be921665e8c6fe47886d25}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Régime sinusoïdal forcé}
+      \field{urlday}{12}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://femto-physique.fr/electrocinetique/regime-sinusoidal.php
+      \endverb
+      \verb{url}
+      \verb https://femto-physique.fr/electrocinetique/regime-sinusoidal.php
+      \endverb
+    \endentry
+    \entry{wiki-chaleur}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=22241c4ab1a98700a51c25d09c2b569f}{%
+           family={Wikipédia},
+           familyi={W\bibinitperiod},
+           prefix={contributeurs},
+           prefixi={c\bibinitperiod}}}%
+      }
+      \strng{namehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{bibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorbibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authornamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Équation de la chaleur}
+      \field{urlday}{15}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://fr.wikipedia.org/wiki/équation_de_la_chaleur
+      \endverb
+      \verb{url}
+      \verb https://fr.wikipedia.org/wiki/%C3%A9quation_de_la_chaleur
+      \endverb
+    \endentry
+    \entry{wiki-signal}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=22241c4ab1a98700a51c25d09c2b569f}{%
+           family={Wikipédia},
+           familyi={W\bibinitperiod},
+           prefix={contributeurs},
+           prefixi={c\bibinitperiod}}}%
+      }
+      \strng{namehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{bibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorbibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authornamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Traitement du signal}
+      \field{urlday}{10}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://fr.wikipedia.org/wiki/Traitement_du_signal
+      \endverb
+      \verb{url}
+      \verb https://fr.wikipedia.org/wiki/Traitement_du_signal
+      \endverb
+    \endentry
+    \entry{wiki-tfd}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=22241c4ab1a98700a51c25d09c2b569f}{%
+           family={Wikipédia},
+           familyi={W\bibinitperiod},
+           prefix={contributeurs},
+           prefixi={c\bibinitperiod}}}%
+      }
+      \strng{namehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{bibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorbibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authornamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \field{extraname}{3}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Transformation de Fourier discrète}
+      \field{urlday}{10}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://fr.wikipedia.org/wiki/Transformation_de_Fourier_discrète
+      \endverb
+      \verb{url}
+      \verb https://fr.wikipedia.org/wiki/Transformation_de_Fourier_discr%C3%A8te
+      \endverb
+    \endentry
+    \entry{wiki-fft}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=22241c4ab1a98700a51c25d09c2b569f}{%
+           family={Wikipédia},
+           familyi={W\bibinitperiod},
+           prefix={contributeurs},
+           prefixi={c\bibinitperiod}}}%
+      }
+      \strng{namehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{bibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorbibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authornamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \field{extraname}{4}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Transformation de Fourier rapide}
+      \field{urlday}{10}
+      \field{urlmonth}{3}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://fr.wikipedia.org/wiki/Transformation_de_Fourier_rapide
+      \endverb
+      \verb{url}
+      \verb https://fr.wikipedia.org/wiki/Transformation_de_Fourier_rapide
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
