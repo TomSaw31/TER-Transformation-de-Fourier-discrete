@@ -19,84 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
-    \entry{cooley-tukey-fft}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=9a5cfe59165ea73852bf47c17612fc90}{%
-           family={Cooley},
-           familyi={C\bibinitperiod},
-           given={James\bibnamedelima W.},
-           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-        {{hash=9edab5dbc1987bcb98d6de058f00fc47}{%
-           family={Tukey},
-           familyi={T\bibinitperiod},
-           given={John\bibnamedelima W.},
-           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-      }
-      \strng{namehash}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \strng{fullhash}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \strng{fullhashraw}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \strng{bibnamehash}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \strng{authorbibnamehash}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \strng{authornamehash}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \strng{authorfullhash}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \strng{authorfullhashraw}{ee74374d9504fa6fb4aa57320b0e47fc}
-      \field{sortinit}{C}
-      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Mathematics of Computation}
-      \field{number}{90}
-      \field{title}{An Algorithm for the Machine Calculation of Complex Fourier Series}
-      \field{volume}{19}
-      \field{year}{1965}
-      \field{pages}{297\bibrangedash 301}
-      \range{pages}{5}
-      \verb{doi}
-      \verb 10.1090/S0025-5718-1965-0178586-1
-      \endverb
-    \endentry
-    \entry{gauss-fft}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=cf40c6457b55b058b0c4072636223298}{%
-           family={Heideman},
-           familyi={H\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=927a9591a81d13904e2417ff95619693}{%
-           family={Johnson},
-           familyi={J\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=617a7a1086f561e6730271bb85402df3}{%
-           family={Burrus},
-           familyi={B\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \strng{fullhash}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \strng{fullhashraw}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \strng{bibnamehash}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \strng{authorbibnamehash}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \strng{authornamehash}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \strng{authorfullhash}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \strng{authorfullhashraw}{d5079c958d2bc6b2644dbd63ea915c5b}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE ASSP Magazine}
-      \field{number}{4}
-      \field{title}{Gauss and the history of the fast fourier transform}
-      \field{volume}{1}
-      \field{year}{1984}
-      \field{pages}{14\bibrangedash 21}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1109/MASSP.1984.1162257
-      \endverb
-      \keyw{Gaussian processes;History;Fast Fourier transforms}
-    \endentry
     \entry{dirac}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=f66f93ab8653503571a5308009aa6fd6}{%
@@ -152,29 +74,6 @@
       \verb{url}
       \verb https://femto-physique.fr/electrocinetique/regime-sinusoidal.php
       \endverb
-    \endentry
-    \entry{algo-fft}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=5a76bb7e9fa1dca1edcb1769ee960b74}{%
-           family={Schwarzentruber},
-           familyi={S\bibinitperiod},
-           given={François},
-           giveni={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \strng{fullhash}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \strng{fullhashraw}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \strng{bibnamehash}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \strng{authorbibnamehash}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \strng{authornamehash}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \strng{authorfullhash}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \strng{authorfullhashraw}{5a76bb7e9fa1dca1edcb1769ee960b74}
-      \field{sortinit}{S}
-      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{ALGO1 - Diviser pour régner}
-      \field{year}{2020}
     \endentry
     \entry{wiki-chaleur}{misc}{}{}
       \name{author}{1}{}{%

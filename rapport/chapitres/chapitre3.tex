@@ -1,0 +1,46 @@
+\section{Transformée de Fourier rapide}
+
+La FFT (\textit{Fast Fourier Transform}, transformée de Fourier rapide) désigne une famille d'algorithmes permettant de calculer \og rapidement \fg la transformée de Fourier discrète d'un signal. En particulier, la complexité temporelle des algorithmes FFT est en $O(n \log(n))$, ces algorithmes sont donc bien plus efficace que l'algorithme naïf consistant à appliquer directement la définition de la TFD dont la complexité est en $O(n^2)$.
+
+Les premières ébauches de FFT remontent au début du XIX\textsuperscript{ème}, Gauss en avait alors imaginé le principe\cite{gauss-fft} mais le concept a réellement connu un regain d'intérêt dans la deuxième moitié du XX\textsuperscript{ème} siècle avec l'essor de l'informatique.
+
+\subsection{Algorithme de Cooley-Tukey}
+
+En 1965, les mathématiciens James Cooley et John Tukey publient un article présentant un algorithme de FFT appelé algorithme de Cooley-Tukey\cite{cooley-tukey-fft} qui relance l'intérêt pour la transformée de Fourier rapide. Il s'agit dans sa version la plus simple d'un algorithme récursif.
+
+Dans un premier temps, il faut reformuler quelque peu les termes du problèmes\cite{algo-fft}. On a vu précédemment que la TFD d'un signal $x = \left( x_0, \dots, x_{N - 1} \right)$ était le vecteur $X = \left( X_0, \dots, X_{N-1} \right)$ avec $X_k = \sum_{n = 0}^{N - 1} x_n e^{-i \frac{2 \pi}{N} k n}$. Or, si on pose $P = \sum_{n=0}^{N - 1} x_n X^n$ et $\omega_N = e^{-i \frac{2 \pi}{N}}$ une racine primitive $N$-ième de l'unité, alors, calculer $X_k$ revient à évaluer $P$ en ${\omega_N}^k = e^{-i \frac{2 \pi}{N} k}$. On suppose dans la suite que $N$ est une puissance de 2.
+
+On peut alors exploiter cette reformulation pour réduire le coût de calcul, on va décomposer $P$ en deux polynômes de degré inférieur. En particulier, on a,
+\begin{align*}
+P(X) &= \sum_{n=0}^{N-1} x_n X^n \\
+&= \sum_{n=0}^{\frac{N}{2}-1} x_{2n} X^{2 n} + \sum_{n=0}^{\frac{N}{2}-1} x_{2 n + 1} X^{2 n + 1} \\
+&= \sum_{n=0}^{\frac{N}{2}-1} x_{2 n} (X^2)^n + X \sum_{n=0}^{\frac{N}{2}-1} x_{2 n + 1} (X^2)^n
+\end{align*}
+
+On pose alors,
+$$
+P_{\text{pair}}(X) = \sum_{n=0}^{\frac{N}{2}-1} x_{2 n} X^n \quad \text{et} \quad P_{\text{impair}}(X) = \sum_{n=0}^{\frac{N}{2}-1} x_{2 n + 1} X^n
+$$
+on obtient finalement,
+$$
+P(X) = P_{\text{pair}}(X^2) + X P_{\text{impair}}(X^2)
+$$
+
+Ainsi, pour $k \in \{0, \dots, N - 1\}$,
+$$
+X_k = P({\omega_N}^k) = P_{\text{pair}}({\omega_N}^{2 k}) + {\omega_N}^k P_{\text{impair}}({\omega_N}^{2 k}).
+$$
+
+Or, ${\omega_N}^{2} = e^{-i \frac{4 \pi}{N}} = e^{-i \frac{2\ pi}{N / 2}} = {\omega_{N / 2}}$ et $P_{\text{pair}}$ et $P_{\text{impair}}$ sont de degré $\tfrac{N}{2}$. Ainsi, les termes $P_{\text{pair}}({\omega_N}^{2 k})$ et $P_{\text{impair}}({\omega_N}^{2 k})$ correspondent à des transformées de Fourier discrètes de taille $\tfrac{N}{2}$.
+
+On obtient donc les relations suivantes, pour $k \in \{0, \dots, \frac{N}{2}-1\}$ :
+$$
+X_k = E_k + {\omega_N}^k O_k, \quad X_{k + \frac{N}{2}} = E_k - {\omega_N}^k O_k
+$$
+où
+$$
+E_k = P_{\text{pair}}({\omega_N}^{2 k}), \quad O_k = P_{\text{impair}}({\omega_N}^{2 k})
+$$
+
+Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux TFD de taille $\frac{N}{2}$.
+
