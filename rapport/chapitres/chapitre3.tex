@@ -42,5 +42,37 @@ $$
 E_k = P_{\text{pair}}({\omega_N}^{2 k}), \quad O_k = P_{\text{impair}}({\omega_N}^{2 k})
 $$
 
-Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux TFD de taille $\frac{N}{2}$.
+Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux TFD de taille $\frac{N}{2}$. On observe en outre que si $N = 1$, on a $X_0 = \sum_{n=0}^{0} x_0 e^{-i \frac{2 \pi}{N} \cdot 0 \cdot n} = x_0$. On en déduit l'algorithme récursif suivant :
 
+\begin{algorithm}
+\DontPrintSemicolon
+\KwData{Un signal $x = \left( x_0, \dots, x_{N-1} \right)$ et la racine de l'unité $\omega = e^{-i \frac{2 \pi}{N}}$}
+\KwResult{La transformée de Fourier discrète du signal $x$, $X = \left( X_0, \dots, X_{N-1} \right)$}
+\SetKwFunction{FFT}{fft}
+\SetKwProg{Fn}{Fonction}{:}{}
+
+\Fn{\FFT{$x, \omega$}}{
+    \Si{$N = 1$}{
+        \Return $x_0$\;
+    }\Sinon{
+        $E \gets $ \FFT{$\left( x_0, x_2, \dots, x_{N - 2} \right), \omega^2$}\;
+        $O \gets $ \FFT{$\left( x_1, x_3, \dots, x_{N - 1} \right), \omega^2$}\;
+        $\alpha \gets 1$\;
+
+        \Pour{$k = 0$ \KwTo $\frac{N}{2} - 1$}{
+            $X_k \gets E\left[ k \right] + \alpha \times O\left[ k \right]$\;
+            $X_{k + \frac{N}{2}} \gets E\left[ k \right] - \alpha \times O\left[ k \right]$\;
+            $\alpha \gets \alpha \times \omega$\;
+        }
+        \Retour $\left( X_0, \dots, X_{N - 1} \right)$\;
+    }
+}
+
+\caption{Algorithme de Cooley-Tukey\cite{algo-fft}}
+\end{algorithm}
+
+\subsection{Exemple de calcul}
+
+\subsection{Complexité algorithmique}
+
+\subsection{Implémentation concrète}

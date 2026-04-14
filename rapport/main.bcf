@@ -2382,6 +2382,7 @@
     <bcf:citekey order="7" intorder="1">gauss-fft</bcf:citekey>
     <bcf:citekey order="8" intorder="1">cooley-tukey-fft</bcf:citekey>
     <bcf:citekey order="9" intorder="1">algo-fft</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">algo-fft</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

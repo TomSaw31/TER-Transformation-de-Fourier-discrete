@@ -7,6 +7,16 @@ INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\article.
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\ifoddpage\ifoddpage.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\tools\xspace.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
+INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\relsize\relsize.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\csquotes\csquotes.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\etoolbox\etoolbox.sty
@@ -333,8 +343,6 @@ INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\logreq\logreq
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\logreq\logreq.def
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\logreq\logreq.def
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\logreq\logreq.def
-INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
-INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\base\ifthen.sty
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\blx-dm.def
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\blx-dm.def
 INPUT C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex\latex\biblatex\blx-dm.def
