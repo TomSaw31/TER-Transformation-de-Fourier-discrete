@@ -2383,6 +2383,7 @@
     <bcf:citekey order="8" intorder="1">cooley-tukey-fft</bcf:citekey>
     <bcf:citekey order="9" intorder="1">algo-fft</bcf:citekey>
     <bcf:citekey order="10" intorder="1">algo-fft</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">wiki-master-theorem</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

@@ -1,6 +1,6 @@
 \section{Transformée de Fourier rapide}
 
-La FFT (\textit{Fast Fourier Transform}, transformée de Fourier rapide) désigne une famille d'algorithmes permettant de calculer \og rapidement \fg la transformée de Fourier discrète d'un signal. En particulier, la complexité temporelle des algorithmes FFT est en $O(n \log(n))$, ces algorithmes sont donc bien plus efficace que l'algorithme naïf consistant à appliquer directement la définition de la TFD dont la complexité est en $O(n^2)$.
+La FFT (\textit{Fast Fourier Transform}, transformée de Fourier rapide) désigne une famille d'algorithmes permettant de calculer \og rapidement \fg la transformée de Fourier discrète d'un signal. En particulier, la complexité temporelle des algorithmes FFT est en $\Theta \left(n \log \left( n \right) \right)$, ces algorithmes sont donc bien plus efficace que l'algorithme naïf consistant à appliquer directement la définition de la TFD dont la complexité est en $\Theta\left( n^2 \right)$.
 
 Les premières ébauches de FFT remontent au début du XIX\textsuperscript{ème}, Gauss en avait alors imaginé le principe\cite{gauss-fft} mais le concept a réellement connu un regain d'intérêt dans la deuxième moitié du XX\textsuperscript{ème} siècle avec l'essor de l'informatique.
 
@@ -46,8 +46,9 @@ Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux 
 
 \begin{algorithm}
 \DontPrintSemicolon
-\KwData{Un signal $x = \left( x_0, \dots, x_{N-1} \right)$ et la racine de l'unité $\omega = e^{-i \frac{2 \pi}{N}}$}
-\KwResult{La transformée de Fourier discrète du signal $x$, $X = \left( X_0, \dots, X_{N-1} \right)$}
+\Donnees{Un signal $x = \left( x_0, \dots, x_{N-1} \right)$ et la racine de l'unité $\omega = e^{-i \frac{2 \pi}{N}}$.}
+
+\Resultat{La transformée de Fourier discrète du signal $x$, $X = \left( X_0, \dots, X_{N-1} \right)$.}
 \SetKwFunction{FFT}{fft}
 \SetKwProg{Fn}{Fonction}{:}{}
 
@@ -71,8 +72,28 @@ Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux 
 \caption{Algorithme de Cooley-Tukey\cite{algo-fft}}
 \end{algorithm}
 
+Notons que la racine de l'unité $\omega$ est donnée en entrée de la fonction \FFT, on évite ainsi de la recalculer en fonction de $N$ à chaque appel récursif. En pratique une fonction \textit{wrapper} (enveloppante), ne prenant pas $\omega$ en paramètre, se chargera de calculer $\omega_N$ avant d'appeler \FFT une première fois.
+
 \subsection{Exemple de calcul}
 
 \subsection{Complexité algorithmique}
+
+L'algorithme de Cooley-Tukey a une complexité algorithmique en $\Theta \left( n \log \left( n \right) \right)$ où $n$ est la taille du signal à traiter. Ce résultat se démontre à l'aide du \textit{master theorem}\cite{wiki-master-theorem} (aussi appelé \og théorème sur les récurrences par partition \fg). 
+
+En effet, si on note $\tau \left( n \right)$ le nombre d'opérations élémentaires pour exécuter \FFT sur un signal de longueur $n$, on a,
+\begin{align*}
+\tau \left( n \right) &= 2 \tau \left( \frac{n}{2} \right) + \Theta \left( n \right) \\
+&= a \tau \left( \frac{n}{b} \right) + f \left( n \right) \quad \text{avec $a = b = 2$ et $f \left( n \right) = \Theta \left( n \right)$}
+\end{align*}
+On calcule alors,
+$$
+n^{\log_b{a}} = n^{\log_2{2}} = n^1 = n
+$$
+On obtient,
+$$
+f \left( n \right) = \Theta \left( n \right) = \Theta \left( n^{\log_b{a}} \right)
+$$
+On en déduit donc, d'après le \textit{master theorem}, que $\tau \left( n \right) = \Theta \left( n^{\log_b{a}} \log \left( n \right) \right) = \Theta \left( n \log \left( n \right) \right)$.
+
 
 \subsection{Implémentation concrète}

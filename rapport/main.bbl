@@ -209,7 +209,7 @@
       \verb https://fr.wikipedia.org/wiki/%C3%A9quation_de_la_chaleur
       \endverb
     \endentry
-    \entry{wiki-signal}{misc}{}{}
+    \entry{wiki-master-theorem}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=22241c4ab1a98700a51c25d09c2b569f}{%
            family={Wikipédia},
@@ -226,6 +226,39 @@
       \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
       \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
       \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Master theorem}
+      \field{urlday}{14}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://fr.wikipedia.org/wiki/Master_theorem
+      \endverb
+      \verb{url}
+      \verb https://fr.wikipedia.org/wiki/Master_theorem
+      \endverb
+    \endentry
+    \entry{wiki-signal}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=22241c4ab1a98700a51c25d09c2b569f}{%
+           family={Wikipédia},
+           familyi={W\bibinitperiod},
+           prefix={contributeurs},
+           prefixi={c\bibinitperiod}}}%
+      }
+      \strng{namehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{fullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{bibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorbibnamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authornamehash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
+      \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
+      \field{extraname}{3}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
@@ -258,7 +291,7 @@
       \strng{authornamehash}{22241c4ab1a98700a51c25d09c2b569f}
       \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
       \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
-      \field{extraname}{3}
+      \field{extraname}{4}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
@@ -291,7 +324,7 @@
       \strng{authornamehash}{22241c4ab1a98700a51c25d09c2b569f}
       \strng{authorfullhash}{22241c4ab1a98700a51c25d09c2b569f}
       \strng{authorfullhashraw}{22241c4ab1a98700a51c25d09c2b569f}
-      \field{extraname}{4}
+      \field{extraname}{5}
       \field{sortinit}{W}
       \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
       \field{labelnamesource}{author}
