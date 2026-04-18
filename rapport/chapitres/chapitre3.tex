@@ -1,99 +1,55 @@
-\section{Transformée de Fourier rapide}
+\section{Transformée de Fourier}
 
-La FFT (\textit{Fast Fourier Transform}, transformée de Fourier rapide) désigne une famille d'algorithmes permettant de calculer \og rapidement \fg la transformée de Fourier discrète d'un signal. En particulier, la complexité temporelle des algorithmes FFT est en $\Theta \left(n \log \left( n \right) \right)$, ces algorithmes sont donc bien plus efficace que l'algorithme naïf consistant à appliquer directement la définition de la TFD dont la complexité est en $\Theta\left( n^2 \right)$.
+\subsection{Transformée de Fourier Continue}
 
-Les premières ébauches de FFT remontent au début du XIX\textsuperscript{ème}, Gauss en avait alors imaginé le principe\cite{gauss-fft} mais le concept a réellement connu un regain d'intérêt dans la deuxième moitié du XX\textsuperscript{ème} siècle avec l'essor de l'informatique.
+Le mathématicien Joseph Fourier a démontré que la plupart des signaux que l'on souhaite étudier dans le cadre du traitement de signal peut s'écrire comme une somme d'exponentielles complexes \cite{wiki-fft} . Ainsi, un signal est caractérisé par sa phase, som amplitude mais surtout par sa, ou ses, fréquences (largeur des oscillations). L'enjeu de cette section va être d'introduire des outils permettant de passer du domaine temporel, où le signal est caractérisé par le temps $t$, vers le domaine fréquentiel, paramétré par des fréquences.
 
-\subsection{Algorithme de Cooley-Tukey}
+Avant d'aborder la transformée de Fourier discrète, il est nécessaire de définir un outil qui permet d'extraire la fréquence d'un signal. Pour une fonction $f$ représentant un signal quelconque, on utilise la définition suivante:
 
-En 1965, les mathématiciens James Cooley et John Tukey publient un article présentant un algorithme de FFT appelé algorithme de Cooley-Tukey\cite{cooley-tukey-fft} qui relance l'intérêt pour la transformée de Fourier rapide. Il s'agit dans sa version la plus simple d'un algorithme récursif.
 
-Dans un premier temps, il faut reformuler quelque peu les termes du problèmes\cite{algo-fft}. On a vu précédemment que la TFD d'un signal $x = \left( x_0, \dots, x_{N - 1} \right)$ était le vecteur $X = \left( X_0, \dots, X_{N-1} \right)$ avec $X_k = \sum_{n = 0}^{N - 1} x_n e^{-i \frac{2 \pi}{N} k n}$. Or, si on pose $P = \sum_{n=0}^{N - 1} x_n X^n$ et $\omega_N = e^{-i \frac{2 \pi}{N}}$ une racine primitive $N$-ième de l'unité, alors, calculer $X_k$ revient à évaluer $P$ en ${\omega_N}^k = e^{-i \frac{2 \pi}{N} k}$. On suppose dans la suite que $N$ est une puissance de 2.
-
-On peut alors exploiter cette reformulation pour réduire le coût de calcul, on va décomposer $P$ en deux polynômes de degré inférieur. En particulier, on a,
+Soit $f$ intégrable sur $\mathbb{R}$. La \textbf{transformée de Fourier} de $f$, notée $TF[f]$, est la fonction :
 \begin{align*}
-P(X) &= \sum_{n=0}^{N-1} x_n X^n \\
-&= \sum_{n=0}^{\frac{N}{2}-1} x_{2n} X^{2 n} + \sum_{n=0}^{\frac{N}{2}-1} x_{2 n + 1} X^{2 n + 1} \\
-&= \sum_{n=0}^{\frac{N}{2}-1} x_{2 n} (X^2)^n + X \sum_{n=0}^{\frac{N}{2}-1} x_{2 n + 1} (X^2)^n
+    &TF[f] : x \mapsto \int_{-\infty}^{+\infty} f(t) \cdot e^{-2 i \pi x t}dt
 \end{align*}
 
-On pose alors,
-$$
-P_{\text{pair}}(X) = \sum_{n=0}^{\frac{N}{2}-1} x_{2 n} X^n \quad \text{et} \quad P_{\text{impair}}(X) = \sum_{n=0}^{\frac{N}{2}-1} x_{2 n + 1} X^n
-$$
-on obtient finalement,
-$$
-P(X) = P_{\text{pair}}(X^2) + X P_{\text{impair}}(X^2)
-$$
-
-Ainsi, pour $k \in \{0, \dots, N - 1\}$,
-$$
-X_k = P({\omega_N}^k) = P_{\text{pair}}({\omega_N}^{2 k}) + {\omega_N}^k P_{\text{impair}}({\omega_N}^{2 k}).
-$$
-
-Or, ${\omega_N}^{2} = e^{-i \frac{4 \pi}{N}} = e^{-i \frac{2\ pi}{N / 2}} = {\omega_{N / 2}}$ et $P_{\text{pair}}$ et $P_{\text{impair}}$ sont de degré $\tfrac{N}{2}$. Ainsi, les termes $P_{\text{pair}}({\omega_N}^{2 k})$ et $P_{\text{impair}}({\omega_N}^{2 k})$ correspondent à des transformées de Fourier discrètes de taille $\tfrac{N}{2}$.
-
-On obtient donc les relations suivantes, pour $k \in \{0, \dots, \frac{N}{2}-1\}$ :
-$$
-X_k = E_k + {\omega_N}^k O_k, \quad X_{k + \frac{N}{2}} = E_k - {\omega_N}^k O_k
-$$
-où
-$$
-E_k = P_{\text{pair}}({\omega_N}^{2 k}), \quad O_k = P_{\text{impair}}({\omega_N}^{2 k})
-$$
-
-Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux TFD de taille $\frac{N}{2}$. On observe en outre que si $N = 1$, on a $X_0 = \sum_{n=0}^{0} x_0 e^{-i \frac{2 \pi}{N} \cdot 0 \cdot n} = x_0$. On en déduit l'algorithme récursif suivant :
-
-\begin{algorithm}
-\DontPrintSemicolon
-\Donnees{Un signal $x = \left( x_0, \dots, x_{N-1} \right)$ et la racine de l'unité $\omega = e^{-i \frac{2 \pi}{N}}$.}
-
-\Resultat{La transformée de Fourier discrète du signal $x$, $X = \left( X_0, \dots, X_{N-1} \right)$.}
-\SetKwFunction{FFT}{fft}
-\SetKwProg{Fn}{Fonction}{:}{}
-
-\Fn{\FFT{$x, \omega$}}{
-    \Si{$N = 1$}{
-        \Return $x_0$\;
-    }\Sinon{
-        $E \gets $ \FFT{$\left( x_0, x_2, \dots, x_{N - 2} \right), \omega^2$}\;
-        $O \gets $ \FFT{$\left( x_1, x_3, \dots, x_{N - 1} \right), \omega^2$}\;
-        $\alpha \gets 1$\;
-
-        \Pour{$k = 0$ \KwTo $\frac{N}{2} - 1$}{
-            $X_k \gets E\left[ k \right] + \alpha \times O\left[ k \right]$\;
-            $X_{k + \frac{N}{2}} \gets E\left[ k \right] - \alpha \times O\left[ k \right]$\;
-            $\alpha \gets \alpha \times \omega$\;
-        }
-        \Retour $\left( X_0, \dots, X_{N - 1} \right)$\;
-    }
+\remarque{Dans le cadre du traitement de signal, la fonction à laquelle on applique une TF est un signal, $x(t)$, sa transformée de Fourier est alors notée $X(f)$ où $f$ désigne la fréquence. On a :
+    \begin{align*}
+        &X(f) = \int_{-\infty}^{+\infty} x(t) \cdot e^{-i 2 \pi f t} dt \\
+        &X(\omega) = \int_{-\infty}^{+\infty} x(t) \cdot e^{-i \omega t} dt \quad \text{où $\omega = 2 \pi f$, la pulsation}
+    \end{align*}
 }
 
-\caption{Algorithme de Cooley-Tukey\cite{algo-fft}}
-\end{algorithm}
 
-Notons que la racine de l'unité $\omega$ est donnée en entrée de la fonction \FFT, on évite ainsi de la recalculer en fonction de $N$ à chaque appel récursif. En pratique une fonction \textit{wrapper} (enveloppante), ne prenant pas $\omega$ en paramètre, se chargera de calculer $\omega_N$ avant d'appeler \FFT une première fois.
+\subsection{Transformée de Fourier Discrète}
 
-\subsection{Exemple de calcul}
-
-\subsection{Complexité algorithmique}
-
-L'algorithme de Cooley-Tukey a une complexité algorithmique en $\Theta \left( n \log \left( n \right) \right)$ où $n$ est la taille du signal à traiter. Ce résultat se démontre à l'aide du \textit{master theorem}\cite{wiki-master-theorem} (aussi appelé \og théorème sur les récurrences par partition \fg). 
-
-En effet, si on note $\tau \left( n \right)$ le nombre d'opérations élémentaires pour exécuter \FFT sur un signal de longueur $n$, on a,
-\begin{align*}
-\tau \left( n \right) &= 2 \tau \left( \frac{n}{2} \right) + \Theta \left( n \right) \\
-&= a \tau \left( \frac{n}{b} \right) + f \left( n \right) \quad \text{avec $a = b = 2$ et $f \left( n \right) = \Theta \left( n \right)$}
-\end{align*}
-On calcule alors,
+Soit $x = (x_0, x_1, \dots, x_{N-1}) \in \mathbb{C}^N$ le vecteur du signal échantillonné. On appelle \textbf{Transformée de Fourier Discrète} \cite{wiki-tfd} de $x$, le vecteur $X = (X_0, X_1,..., X_{N-1}) \in \mathbb{C}^N$ avec :
 $$
-n^{\log_b{a}} = n^{\log_2{2}} = n^1 = n
+X_k = \sum_{n=0}^{N-1} x_n e^{-i \frac{2\pi}{N} kn} \quad \forall k \in \{0, \dots, N-1\}
 $$
-On obtient,
-$$
-f \left( n \right) = \Theta \left( n \right) = \Theta \left( n^{\log_b{a}} \right)
-$$
-On en déduit donc, d'après le \textit{master theorem}, que $\tau \left( n \right) = \Theta \left( n^{\log_b{a}} \log \left( n \right) \right) = \Theta \left( n \log \left( n \right) \right)$.
 
+Cette formule permet de passer du domaine temporel $(x_k)$ au domaine fréquentiel $(X_k)$.
 
-\subsection{Implémentation concrète}
+De manière analogue, on peut définir la {Transformée de Fourier Discrète Inverse} qui permet de revenir du domaine fréquentiel au domaine temporel :
+$$x_k = \dfrac{1}{N}\sum_{n=0}^{N-1}X_ne^{i \frac{2 \pi}{N}kn}\quad \forall k \in \{0, \dots, N-1\}
+$$
+On a alors TFDI(TFD($x_n$)) = $x_n$
+\begin{proof}
+    Soit $(x_0,x_1,...,x_{N-1}) \in \mathbb{C}^N$. Soit $0 \leq n < N$.
+
+    \begin{align*}
+        TFDI(TFD(x_n))&=\dfrac{1}{N} \sum_{k=0}^{N-1} \left(\sum_{m=0}^{N-1} x_m e^{-i \frac{2\pi}{N} km}\right) e^{i \frac{2 \pi}{N}kn} \\
+        &= \dfrac{1}{N} \sum_{m=0}^{N-1} x_m \left( \sum_{k=0}^{N-1} e^{-i \frac{2\pi}{N} k(m-n)} \right)
+    \end{align*}
+    Posons :
+    $$S_N \coloneq \sum_{k=0}^{N-1}e^{-i \frac{2\pi}{N} k(m-n)}$$
+    On remarque que $S_N$ est une somme partielle d'une suite géométrique de raison $q = e^{-i \frac{2\pi}{N} (m-n)}$.
+    \begin{description}
+        \item[Si $n=m$, ] $q = e^0 = 1 \implies S_N = \sum_{k=0}^{N-1} 1 = N$  
+        \item[Si $n\neq m$, ] $S_N=\frac{1-q^N}{1-q}$ or, $q^N = e^{-i2\pi(m-n)} = 1$ car $m-n\in \mathbb{Z}$ donc $S_N = 0$ 
+    \end{description}
+    $$\implies TFDI(TFD(x_n)) =\dfrac{1}{N}\sum_{m=0}^{N-1}x_m \cdot N \delta_{nm} = \dfrac{1}{N}x_n\cdot N = x_n$$
+\end{proof}
+
+\subsection{Spectre d'une image}
+
+% Dans les sections précédentes donner des exemples (notamment graphique) du spectre d'un signal et expliquer à quoi correspond le spectre d'un signal. L'enjeu de cette section est d'expliquer comment appliquer la transformée de Fourier à une image 2D et comment interpréter le spectre 2D obtenu, on pourra utiliser les résultats du notebook pour illustrer.
