@@ -13,3 +13,10 @@
 \contentsline {subsection}{\numberline {4.3}Complexité algorithmique}{8}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Implémentation concrète}{9}{subsection.4.4}%
 \contentsline {section}{\numberline {5}La compression JPEG}{9}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Transformée en Cosinus Discrète (DCT)}{9}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Transformation en blocs}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Compression du spectre}{12}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Métrique d'évaluation d'algorithmes de compression d'images}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Erreur Moyenne Quadratique}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Peak Signal-to-Noise Ratio}{15}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Structural Similarity Index Measure}{15}{subsection.6.3}%
