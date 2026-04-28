@@ -1,16 +1,13 @@
 \section{Métrique d'évaluation d'algorithmes de compression d'images}
 
-Nous avons vu plusieurs algorithmes pour la compression des images. 
-Il devient alors nécessaire d'introduire différentes métriques pour quantifier les différences entre l'image originale et celles compressées par les algorithmes.
+Nous avons vu plusieurs algorithmes pour la compression des images. Il devient alors nécessaire d'introduire différentes métriques pour quantifier les différences entre l'image originale et celles compressées par les algorithmes.
+
 Nous verrons dans cette partie différentes métriques, certaines pour quantifier les différences purement mathématiques et 
 d'autres pour approximer les différences perceptibles par l'oeil humain. Ces métriques seront utiles afin de déterminer plus tard 
-le taux de compression optimal pour faire un compromis entre la taille du fichier et la qualité de l'image. \\
-
-
+le taux de compression optimal pour faire un compromis entre la taille du fichier et la qualité de l'image.
 
 \subsection{Erreur Moyenne Quadratique}
-Une première métrique permettant de quantifier la compression est l'\textbf{erreur moyenne quadratique (MSE)}. Cette métrique est très utilisée, 
-notamment dans le domaine de l'apprentissage automatique. Elle mesure la moyenne des distances carrées entre la valeur initiale et la nouvelle valeur. \\
+Une première métrique permettant de quantifier la compression est l'\textbf{erreur moyenne quadratique (MSE)}. Cette métrique est très utilisée, notamment dans le domaine de l'apprentissage automatique. Elle mesure la moyenne des distances carrées entre la valeur initiale et la nouvelle valeur.
 $$MSE = \frac{1}{3MN} \sum_{c \in \{r,g,b\}}\sum_{i=0}^{M-1} \sum_{j=0}^{N-1} (I_O^c(i,j)- I_C^c(i,j))^2$$
 où $M$ et $N$ représentent respectivement la hauteur et la largeur de l'image, 
 $I_O^c(i,j)$ (resp. $I_C^c(i,j)$) est l'intensité du pixel $(i,j)$ sur le canal de la couleur $c$ de l'image originale (resp. compressée).
@@ -24,7 +21,7 @@ de l'image originale.
     \includegraphics[width=0.5\textwidth]{images/MSE.png}
     \caption{Evolution de la MSE en fonction du ratio de la compression}
 \end{figure}
-On observe que la MSE sur l'image compressée avec la DCT est inférieure à la MSE de l'image compressée avec la FFT. \\
+On observe que la MSE sur l'image compressée avec la DCT est inférieure à la MSE de l'image compressée avec la FFT.
 
 Cette métrique telle quelle est peu utilisée en traitement du signal mais sert souvent à calculer une autre métrique 
 plus adaptée pour la quantification de la compression de signal.
