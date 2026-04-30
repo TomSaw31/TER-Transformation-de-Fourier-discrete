@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1777380293.6635 "main.bcf" "main.bbl" "main" 1777382346.4254 0
-  "main.bcf" 1777382346 109394 a63632b500c8589538cafbb5d15d3570 "pdflatex"
+["biber main"] 1777380293.6635 "main.bcf" "main.bbl" "main" 1777548483.65948 0
+  "main.bcf" 1777548483 109394 a63632b500c8589538cafbb5d15d3570 "pdflatex"
   "refs.bib" 1777379428 3479 46f6d586bfcb34ec945d1efff77dda66 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1777382343.73028 "c:/Users/Utilisateur/Documents/Etudes/TER-Transformation-de-Fourier-discrete/rapport/main.tex" "main.pdf" "main" 1777382346.42611 0
+["pdflatex"] 1777548480.8351 "c:/Users/Utilisateur/Documents/Etudes/TER-Transformation-de-Fourier-discrete/rapport/main.tex" "main.pdf" "main" 1777548483.66019 0
   "C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776185614 81086 6fddea6b023469843de28035c851ec71 ""
   "C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1774017668 25420 30694cd64c1cf67be723325d86bb7fae ""
   "C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1774017667 31952 cdd557d68bef830e38cac78b97464877 ""
@@ -284,7 +284,7 @@
   "chapitres/chapitre1.tex" 1775922836 1290 807f7d80bb70d747db7add76ad32f268 ""
   "chapitres/chapitre2.tex" 1776509939 11017 d178e10969c4bf387781121eb41b0360 ""
   "chapitres/chapitre3.tex" 1776510183 3722 8ebc619e2785b52444d734ab3722e918 ""
-  "chapitres/chapitre4.tex" 1776510068 6795 52186270b82520f5cf0db4e5cfb74041 ""
+  "chapitres/chapitre4.tex" 1777548480 6810 d36dabc1ed1f16c2642d889278782fec ""
   "chapitres/chapitre5.tex" 1777382218 10442 2ca9b837a194986f68936a9cedbe9cf7 ""
   "chapitres/chapitre6.tex" 1777382343 7197 05fcdb9173fe5f66356b618f5b362e11 ""
   "images/Bloc_DCT.png" 1777374652 17658 ddfd027c12d0a3f5b2f557a768c1fd6f ""
@@ -294,12 +294,12 @@
   "images/SSIM.png" 1777374652 27921 8d9fb3de997b31add781aea1abd6f281 ""
   "images/Spectre_DCT.png" 1777374652 317568 fce9abf872bedd8d7969e24a0b0bbdc3 ""
   "images/joseph_fourier.jpg" 1775296997 232129 fe242fc3222452751743cf5d760345bd ""
-  "main.aux" 1777382346 7126 0d2ec184b84273cdfe745db61047a96e "pdflatex"
+  "main.aux" 1777548483 7126 0d2ec184b84273cdfe745db61047a96e "pdflatex"
   "main.bbl" 1777380295 16739 52c41493b7ebd92f41750bff68171157 "biber main"
-  "main.out" 1777382346 3881 ab1f22d7973d97148323a6f18a5ab213 "pdflatex"
-  "main.run.xml" 1777382346 2298 38cc5f973d305616f87ee31d1bed4203 "pdflatex"
+  "main.out" 1777548483 3881 ab1f22d7973d97148323a6f18a5ab213 "pdflatex"
+  "main.run.xml" 1777548483 2298 38cc5f973d305616f87ee31d1bed4203 "pdflatex"
   "main.tex" 1777374652 3586 08dccdf3d03ad2de6b62ca74afad85c7 ""
-  "main.toc" 1777382346 1891 ecfc9a0f83dd6f4681c4e4ac25e1f524 "pdflatex"
+  "main.toc" 1777548483 1891 ecfc9a0f83dd6f4681c4e4ac25e1f524 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

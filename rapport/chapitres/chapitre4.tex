@@ -54,7 +54,7 @@ Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux 
 
 \Fn{\FFT{$x, \omega$}}{
     \Si{$N = 1$}{
-        \Return $x_0$\;
+        \Retour $\left( x_0 \right)$\;
     }\Sinon{
         $E \gets $ \FFT{$\left( x_0, x_2, \dots, x_{N - 2} \right), \omega^2$}\;
         $O \gets $ \FFT{$\left( x_1, x_3, \dots, x_{N - 1} \right), \omega^2$}\;
