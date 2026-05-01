@@ -206,6 +206,38 @@
       \field{title}{ALGO1 - Diviser pour régner}
       \field{year}{2020}
     \endentry
+    \entry{wiki-jit}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=e77337908f3d2dde163f98050b698763}{%
+           family={Wikipédia},
+           familyi={W\bibinitperiod},
+           given={Contributeurs},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e77337908f3d2dde163f98050b698763}
+      \strng{fullhash}{e77337908f3d2dde163f98050b698763}
+      \strng{fullhashraw}{e77337908f3d2dde163f98050b698763}
+      \strng{bibnamehash}{e77337908f3d2dde163f98050b698763}
+      \strng{authorbibnamehash}{e77337908f3d2dde163f98050b698763}
+      \strng{authornamehash}{e77337908f3d2dde163f98050b698763}
+      \strng{authorfullhash}{e77337908f3d2dde163f98050b698763}
+      \strng{authorfullhashraw}{e77337908f3d2dde163f98050b698763}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Just-in-time compilation}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Just-in-time_compilation
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Just-in-time_compilation
+      \endverb
+    \endentry
     \entry{wiki-chaleur}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=22241c4ab1a98700a51c25d09c2b569f}{%

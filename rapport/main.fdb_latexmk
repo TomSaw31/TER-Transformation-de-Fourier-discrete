@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 1777631639.44298 "main.bcf" "main.bbl" "main" 1777633590.67787 0
-  "main.bcf" 1777633590 109468 f773c6ac39d2bcb18b87771c2d0773b8 "pdflatex"
-  "refs.bib" 1777629696 3963 a616bbdd01209da6438e77662d8bc29b ""
+["biber main"] 1777644310.52352 "main.bcf" "main.bbl" "main" 1777644973.42018 0
+  "main.bcf" 1777644973 109532 dec95855fc5ff8176d7f8a23bd2d2ed6 "pdflatex"
+  "refs.bib" 1777644298 4163 07c8967f03d961d9f46385303e9eecd4 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1777633588.19308 "c:/Users/Utilisateur/Documents/Etudes/TER-Transformation-de-Fourier-discrete/rapport/main.tex" "main.pdf" "main" 1777633590.67854 0
+["pdflatex"] 1777644969.74529 "c:/Users/Utilisateur/Documents/Etudes/TER-Transformation-de-Fourier-discrete/rapport/main.tex" "main.pdf" "main" 1777644973.42128 0
   "C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776185614 81086 6fddea6b023469843de28035c851ec71 ""
   "C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1774017668 25420 30694cd64c1cf67be723325d86bb7fae ""
   "C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1774017667 31952 cdd557d68bef830e38cac78b97464877 ""
@@ -290,22 +290,24 @@
   "chapitres/chapitre1.tex" 1775922836 1290 807f7d80bb70d747db7add76ad32f268 ""
   "chapitres/chapitre2.tex" 1776509939 11017 d178e10969c4bf387781121eb41b0360 ""
   "chapitres/chapitre3.tex" 1776510183 3722 8ebc619e2785b52444d734ab3722e918 ""
-  "chapitres/chapitre4.tex" 1777633585 11351 326d19c3fa75c08fc1021fb66fae0eed ""
+  "chapitres/chapitre4.tex" 1777644968 13403 1fd2be20e11a055600f4be74c0c6a252 ""
   "chapitres/chapitre5.tex" 1777382218 10442 2ca9b837a194986f68936a9cedbe9cf7 ""
   "chapitres/chapitre6.tex" 1777382343 7197 05fcdb9173fe5f66356b618f5b362e11 ""
   "images/Bloc_DCT.png" 1777374652 17658 ddfd027c12d0a3f5b2f557a768c1fd6f ""
+  "images/FFT_performances.png" 1777644094 38958 c4c86f72a14832995feec031c91d18d0 ""
+  "images/FFT_performances_compilees.png" 1777643002 39926 6e8f6558ca2d727b946701e380551a33 ""
   "images/Image_DCT.png" 1777374652 162130 05ebd5bbe97f71964a63e42d4857f2ae ""
   "images/MSE.png" 1777374652 26023 80a1adf0a4916cb328599268f01cdfb1 ""
   "images/PSNR.png" 1777374652 31818 fa8776473e0c3c08def5a8c0848d974a ""
   "images/SSIM.png" 1777374652 27921 8d9fb3de997b31add781aea1abd6f281 ""
   "images/Spectre_DCT.png" 1777374652 317568 fce9abf872bedd8d7969e24a0b0bbdc3 ""
   "images/joseph_fourier.jpg" 1775296997 232129 fe242fc3222452751743cf5d760345bd ""
-  "main.aux" 1777633590 7561 6089443ef5e1055aa4a730a48e945394 "pdflatex"
-  "main.bbl" 1777631641 18109 0b1eff60a5e7e478d9220e4550b157a6 "biber main"
-  "main.out" 1777633590 4024 81c3a0b54f248696c9f73441f007d3f5 "pdflatex"
-  "main.run.xml" 1777633590 2298 38cc5f973d305616f87ee31d1bed4203 "pdflatex"
+  "main.aux" 1777644973 8109 54d52c41a6784fbdc0a6bdd64547231f "pdflatex"
+  "main.bbl" 1777644312 19424 ad93e5e51db33f103f89f6f4f2753f48 "biber main"
+  "main.out" 1777644973 4024 81c3a0b54f248696c9f73441f007d3f5 "pdflatex"
+  "main.run.xml" 1777644973 2298 38cc5f973d305616f87ee31d1bed4203 "pdflatex"
   "main.tex" 1777632450 3616 4b4c16f7047cf7990d9eed5ecfee6b6d ""
-  "main.toc" 1777633590 1976 7cbca2676e43dca8dd1d72150b9b07ce "pdflatex"
+  "main.toc" 1777644973 1976 2164564e0884b30815cedc6a11840a0b "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

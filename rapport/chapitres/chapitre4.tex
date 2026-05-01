@@ -202,6 +202,26 @@ Plus précisément, si le tableau à traiter a pour longueur $2^m$, on peut repr
 
 \subsection{Optimisations diverses}
 
+Bien que la réécriture de l'algorithme en itératif présente des avantages évidents comme le gain de mémoire, une rapide comparaison avec notre première version récursive montre que le gain d'efficacité est marginal.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/FFT_performances.png}
+    \caption{Temps de calcul moyen en fonction de la taille du signal pour différentes FFT.}
+\end{figure}
+
+On peut observer sur ce graphique que notre version itérative est plus rapide en moyenne que la version récursive de la FFT mais elles restent toutes les deux très loin de l'implémentation de référence de numpy. Cet écart est dû, dans une moindre mesure, à des optimisations supplémentaires mis en oeuvre dans l'implémentation numpy, mais surtout au fait que la librairie numpy fait appel à du code C compilé là où notre implémentation en pur python est simplement interprétée.
+
+Pour palier ce problème, une solution simple serait de réécrire tout notre code en C, néanmoins, en python toujours, il est possible de faire un compromis consistant en la compilation à la volée (\textit{just in time compilation}\cite{wiki-jit}). En temps normal, l'interpréteur python traduit dans un premier temps le code python en bytecode, qui sera ensuite exécuté par une machine virtuel. En utilisant une librairie de compilation à la volée, par exemple numba, le bytecode produit est compilé, s'il est jugé que cela apporterait un gain de performance, en langage machine.
+
+Avec cette amélioration, nos deux implémentations de Cooley-Tukey se rapprochent des performances de l'implémentation de numpy. On peut en outre remarquer que l'implémentation itérative semble plus bénéficier de la compilation à la volée.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/FFT_performances_compilees.png}
+    \caption{Temps de calcul moyen en fonction de la taille du signal pour différentes FFT, avec compilation à la volée.}
+\end{figure}
+
 
 
 
