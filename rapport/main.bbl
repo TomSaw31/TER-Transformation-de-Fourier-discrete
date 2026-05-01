@@ -97,6 +97,36 @@
       \endverb
       \keyw{Gaussian processes;History;Fast Fourier transforms}
     \endentry
+    \entry{implementation-fft}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=b1c85851bca303c60aec7a75eca77557}{%
+           family={Klafyvel},
+           familyi={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1c85851bca303c60aec7a75eca77557}
+      \strng{fullhash}{b1c85851bca303c60aec7a75eca77557}
+      \strng{fullhashraw}{b1c85851bca303c60aec7a75eca77557}
+      \strng{bibnamehash}{b1c85851bca303c60aec7a75eca77557}
+      \strng{authorbibnamehash}{b1c85851bca303c60aec7a75eca77557}
+      \strng{authornamehash}{b1c85851bca303c60aec7a75eca77557}
+      \strng{authorfullhash}{b1c85851bca303c60aec7a75eca77557}
+      \strng{authorfullhashraw}{b1c85851bca303c60aec7a75eca77557}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Jouons à implémenter une transformée de Fourier rapide !}
+      \field{urlday}{28}
+      \field{urlmonth}{4}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://zestedesavoir.com/tutoriels/3939/jouons-a-implementer-une-transformee-de-fourier-rapide/
+      \endverb
+      \verb{url}
+      \verb https://zestedesavoir.com/tutoriels/3939/jouons-a-implementer-une-transformee-de-fourier-rapide/
+      \endverb
+    \endentry
     \entry{dirac}{misc}{}{}
       \name{author}{1}{}{%
         {{hash=f66f93ab8653503571a5308009aa6fd6}{%

@@ -146,12 +146,61 @@ $$
 On en déduit donc, d'après le \textit{master theorem}, que $\tau \left( n \right) = \Theta \left( n^{\log_b{a}} \log \left( n \right) \right) = \Theta \left( n \log \left( n \right) \right)$.
 
 
-\subsection{Implémentation concrète}
+\subsection{Approche itérative}
 
-% Dans cette section il faut parler de pourquoi la première implémentation qu'on a est très lente (plusieurs dizaines de secondes pour une image) par rapport à la fft de numpy par exemple. On évoque le fait que dans numpy on fait appel à du code C compilé qui est donc beaucoup plus rapide que python et surtout que l'implémentation évidente de l'algorithme n'est pas efficace. On peut écrire une version itérative plutôt que récursive pour gagner en efficacité, on peut également paralléliser les calculs. Eventuellement on peut écrire une version aussi efficace que possible en C dans un autre fichier pour montrer la différence.
+Bien que l'implémentation fidèle de l'algorithme de Cooley-Tukey décrit précédemment se révèle bien plus efficace que l'algorithme naïf, issu de la définition de la TFD, il reste très lent comparé à l'implémentation de référence pour python fournie dans le module numpy.
+
+Il est néanmoins possible d'améliorer notre implémentation en abandonnant l'approche récursive au profit d'une approche itérative\cite{implementation-fft}. Cela nous permettra de supprimer les copies et allocations de tableaux et éviter les coûts supplémentaires, en temps et en mémoire, liés à la récursion.
+
+L'idée centrale consiste à simuler les appels récursifs \og du bas vers le haut \fg . Le problème, pour accomplir cela, est que l'on ne sait pas, à priori, comment recomposer les sous-tableaux en partant de l'étape avec $N$ sous-tableaux de taille 1. En réalité, le découpage des sous-tableaux en indices pairs/impairs à chaque étape de la récursion permet de \og lire \fg , dans l'écriture binaire des indices des éléments, leur parcours dans les différents sous-tableaux.
+
+Plus précisément, si le tableau à traiter a pour longueur $2^m$, on peut représenter l'indice $k$ d'un élément $x$ en binaire $k = \overline{b_{m - 1}b_{m - 2}\dots b_0}^2$. Alors, lors du premier appel, $x$ est placé dans le sous-tableau pair ou impair en fonction de la parité de $b_0$. Lors du deuxième appel, tous les éléments placés avec $x$ ont la même valeur pour $b_0$, ainsi séparer éléments pairs et impairs se fait en regardant le bit $b_1$. Ce processus se poursuit jusqu'à obtenir des sous-tableaux de taille 1. Ainsi, en partant des sous-tableaux de taille 1, les recompositions à faire se déduisent de la suite $\left( b_0, b_1, \dots, b_{m - 1} \right)$.
+
+À partir de ce constat, on peut obtenir la version itérative de l'algorithme. On commence par réorganiser le tableau en entrée en inversant l'ordre des bits des indices. Une fois le tableau réordonné, on applique les opérations papillons de manière itérative. Une boucle, faisant $\log_2 \left( N \right)$ tours, remplace les appels récursifs. À l'étape $j$, on combine des blocs de taille $2^j$. On en déduit l'algorithme itératif suivant :
 
 
+\begin{algorithm}
+\DontPrintSemicolon
+\Donnees{Un signal $x = (x_0, \dots, x_{N-1})$.}
 
+\Resultat{La transformée de Fourier discrète du signal $X = (X_0, \dots, X_{N-1})$.}
+
+\SetKwFunction{FFTITER}{fft\_iterative}
+\SetKwFunction{BITREVERSE}{bit\_reversal\_permutation}
+\SetKwProg{Fn}{Fonction}{:}{}
+
+\Fn{\FFTITER{$x$}}{
+    $x \gets \BITREVERSE(x)$\;
+
+    $t \gets 1$\;
+    $m \gets 2$\;
+
+    \Pour{$j = 1$ \KwTo $\log_2 N$}{
+        $\omega_m \gets e^{\frac{-2 i \pi}{m}}$\;
+        $\alpha \gets 1$\;
+
+        \Pour{$l = 0$ \KwTo $t - 1$}{
+            \Pour{$k = l$ \KwTo $N - 1$ \KwBy $m$}{
+                $u \gets x_k$\;
+                $v \gets \alpha \times x_{k + t}$\;
+                $x_k \gets u + v$\;
+                $x_{k + t} \gets u - v$\;
+            }
+
+            $\alpha \gets \alpha \times \omega_m$\;
+        }
+
+        $t \gets m$\;
+        $m \gets 2 \times m$\;
+    }
+
+    \Retour $(x_0, \dots, x_{N-1})$\;
+}
+
+\caption{Algorithme de Cooley-Tukey itératif}
+\end{algorithm}
+
+\subsection{Optimisations diverses}
 
 
 
