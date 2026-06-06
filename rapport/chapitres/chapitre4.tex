@@ -8,8 +8,7 @@ Les premières ébauches de FFT remontent au début du XIX\textsuperscript{ème}
 
 En 1965, les mathématiciens James Cooley et John Tukey publient un article présentant un algorithme de FFT appelé algorithme de Cooley-Tukey\cite{cooley-tukey-fft} qui relance l'intérêt pour la transformée de Fourier rapide. Il s'agit dans sa version la plus simple d'un algorithme récursif.
 
-Dans un premier temps, il faut reformuler quelque peu les termes du problèmes\cite{algo-fft}. On a vu précédemment que la TFD d'un signal $x = \left( x_0, \dots, x_{N - 1} \right)$ était le vecteur $X = \left( X_0, \dots, X_{N-1} \right)$ avec $X_k = \sum_{n = 0}^{N - 1} x_n e^{-i \frac{2 \pi}{N} k n}$. Or, si on pose $P = \sum_{n=0}^{N - 1} x_n X^n$ et $\omega_N = e^{-i \frac{2 \pi}{N}}$ une racine primitive $N$-ième de l'unité, alors, calculer $X_k$ revient à évaluer $P$ en ${\omega_N}^k = e^{-i \frac{2 \pi}{N} k}$. On suppose dans la suite que $N$ est une puissance de 2.
-
+Dans un premier temps, il faut reformuler quelque peu les termes du problème\cite{algo-fft}. On a vu précédemment que la TFD d'un signal $x = \left( x_0, \dots, x_{N - 1} \right)$ était le vecteur $X = \left( X_0, \dots, X_{N-1} \right)$ avec $X_k = \sum_{n = 0}^{N - 1} x_n e^{-i \frac{2 \pi}{N} k n}$. Or, si on pose $P = \sum_{n=0}^{N - 1} x_n X^n$ et $\omega_N = e^{-i \frac{2 \pi}{N}}$ une racine primitive $N$-ième de l'unité, alors, calculer $X_k$ revient à évaluer $P$ en ${\omega_N}^k = e^{-i \frac{2 \pi}{N} k}$. On suppose dans la suite que $N$ est une puissance de 2.
 On peut alors exploiter cette reformulation pour réduire le coût de calcul, on va décomposer $P$ en deux polynômes de degré inférieur. En particulier, on a,
 \begin{align*}
 P(X) &= \sum_{n=0}^{N-1} x_n X^n \\
@@ -44,7 +43,7 @@ $$
 
 Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux TFD de taille $\frac{N}{2}$. On observe en outre que si $N = 1$, on a $X_0 = \sum_{n=0}^{0} x_0 e^{-i \frac{2 \pi}{N} \cdot 0 \cdot n} = x_0$. On en déduit l'algorithme récursif suivant :
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \DontPrintSemicolon
 \Donnees{Un signal $x = \left( x_0, \dots, x_{N-1} \right)$ et la racine de l'unité $\omega = e^{-i \frac{2 \pi}{N}}$.}
 
@@ -73,7 +72,6 @@ Cette décomposition permet de calculer une TFD de taille $N$ à partir de deux 
 \end{algorithm}
 
 Notons que la racine de l'unité $\omega$ est donnée en entrée de la fonction \FFT, on évite ainsi de la recalculer en fonction de $N$ à chaque appel récursif. En pratique une fonction \textit{wrapper} (enveloppante), ne prenant pas $\omega$ en paramètre, se chargera de calculer $\omega_N$ avant d'appeler \FFT une première fois.
-
 \subsection{Exemple de calcul}
 
 Lorsqu'on atteint l'étape de combinaison ("le papillon"), on considère les FFT des sous-signaux pairs ($E$) et impairs ($O$) de taille $n=4$ déjà calculées. 
@@ -125,7 +123,7 @@ k=3 & X_3 = E[3] + \omega^3 \cdot 0[3], \quad X_7 = E[3] - \omega^3 \cdot 0[3] &
 \end{flushleft}
 
 On reconstruit $X = (X_0, X_1, X_2, X_3, X_4, X_5, X_6, X_7)$.
-
+\pagebreak
 \subsection{Complexité algorithmique}
 
 L'algorithme de Cooley-Tukey a une complexité algorithmique en $\Theta \left( n \log \left( n \right) \right)$ où $n$ est la taille du signal à traiter. Ce résultat se démontre à l'aide du \textit{master theorem}\cite{wiki-master-theorem} (aussi appelé \og théorème sur les récurrences par partition \fg). 
@@ -148,7 +146,7 @@ On en déduit donc, d'après le \textit{master theorem}, que $\tau \left( n \rig
 
 \subsection{Approche itérative}
 
-Bien que l'implémentation fidèle de l'algorithme de Cooley-Tukey décrit précédemment se révèle bien plus efficace que l'algorithme naïf, issu de la définition de la TFD, il reste très lent comparé à l'implémentation de référence pour python fournie dans le module numpy.
+Bien que l'implémentation fidèle de l'algorithme de Cooley-Tukey décrit précédemment se révèle bien plus efficaces que l'algorithme naïf, issu de la définition de la TFD, il reste très lent comparé à l'implémentation de référence pour python fournie dans le module numpy.
 
 Il est néanmoins possible d'améliorer notre implémentation en abandonnant l'approche récursive au profit d'une approche itérative\cite{implementation-fft}. Cela nous permettra de supprimer les copies et allocations de tableaux et éviter les coûts supplémentaires, en temps et en mémoire, liés à la récursion.
 
@@ -199,7 +197,6 @@ Plus précisément, si le tableau à traiter a pour longueur $2^m$, on peut repr
 
 \caption{Algorithme de Cooley-Tukey itératif}
 \end{algorithm}
-
 \subsection{Optimisations diverses}
 
 Bien que la réécriture de l'algorithme en itératif présente des avantages évidents comme le gain de mémoire, une rapide comparaison avec notre première version récursive montre que le gain d'efficacité est marginal.
@@ -210,9 +207,9 @@ Bien que la réécriture de l'algorithme en itératif présente des avantages é
     \caption{Temps de calcul moyen en fonction de la taille du signal pour différentes FFT.}
 \end{figure}
 
-On peut observer sur ce graphique que notre version itérative est plus rapide en moyenne que la version récursive de la FFT mais elles restent toutes les deux très loin de l'implémentation de référence de numpy. Cet écart est dû, dans une moindre mesure, à des optimisations supplémentaires mis en oeuvre dans l'implémentation numpy, mais surtout au fait que la librairie numpy fait appel à du code C compilé là où notre implémentation en pur python est simplement interprétée.
+On peut observer sur ce graphique que notre version itérative est plus rapide en moyenne que la version récursive de la FFT mais elles restent toutes les deux très loin de l'implémentation de référence de numpy. Cet écart est dû, dans une moindre mesure, à des optimisations supplémentaires mises en oeuvre dans l'implémentation numpy, mais surtout au fait que la librairie numpy fait appel à du code C compilé là où notre implémentation en pur python est simplement interprétée.
 
-Pour palier ce problème, une solution simple serait de réécrire tout notre code en C, néanmoins, en python toujours, il est possible de faire un compromis consistant en la compilation à la volée (\textit{just in time compilation}\cite{wiki-jit}). En temps normal, l'interpréteur python traduit dans un premier temps le code python en bytecode, qui sera ensuite exécuté par une machine virtuel. En utilisant une librairie de compilation à la volée, par exemple numba, le bytecode produit est compilé, s'il est jugé que cela apporterait un gain de performance, en langage machine.
+Pour pallier ce problème, une solution simple serait de réécrire tout notre code en C, néanmoins, en python toujours, il est possible de faire un compromis consistant en la compilation à la volée (\textit{just in time compilation}\cite{wiki-jit}). En temps normal, l'interpréteur python traduit dans un premier temps le code python en bytecode, qui sera ensuite exécuté par une machine virtuelle. En utilisant une librairie de compilation à la volée, par exemple numba, le bytecode produit est compilé, s'il est jugé que cela apporterait un gain de performance, en langage machine.
 
 Avec cette amélioration, nos deux implémentations de Cooley-Tukey se rapprochent des performances de l'implémentation de numpy. On peut en outre remarquer que l'implémentation itérative semble plus bénéficier de la compilation à la volée.
 
@@ -221,6 +218,18 @@ Avec cette amélioration, nos deux implémentations de Cooley-Tukey se rapproche
     \includegraphics[width=0.75\textwidth]{images/FFT_performances_compilees.png}
     \caption{Temps de calcul moyen en fonction de la taille du signal pour différentes FFT, avec compilation à la volée.}
 \end{figure}
+
+\subsection{Spectre de la FFT}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/Spectres_FFT.png}
+    \caption{Analyses du spectre obtenu par FFT}
+\end{figure}
+Sur la première figure, on observe le spectre de l'image après application de la FFT. La couleur est donnée par la formule $c = \ln(1+a_{k,l})$ pour éviter que les valeurs n'explosent. On observe que les valeurs les plus importantes, les basses fréquences sont réparties dans les coins du spectre [\ref{demo5}]. On peut alors réaliser une opération appelée \textbf{Shift} pour replacer les basses fréquences au centre du spectre. Pour ce faire, on échange le coin supérieur gauche avec celui inférieur droit et celui supérieur droit avec celui inférieur gauche. La deuxième figure représente le spectre obtenu après un Shift. Les basses fréquences sont concentrées au centre du spectre. La dernière figure, représente le spectre compressé en ne gardant que 5\% des coefficients de la matrice du spectre. Le fait de ne garder qu'une partie des coefficients pour compresser une image sera détaillé lorsque nous analyserons la Transformée en cosinus discrète par la suite. \\
+Pour compresser l'image, il suffit de trier les coefficients en fonction de leur fréquence et ne garder qu'un certain nombre de coefficients en gardant les basses fréquences car elles permettent de garder les détails principaux de l'image originale. [\ref{demo6}]
+
+
+
 
 
 

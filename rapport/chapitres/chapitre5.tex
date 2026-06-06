@@ -25,34 +25,10 @@ $$ e_k(n) = \alpha_k \cos\left(\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right),\
 
 Les $(e_k)$ forment une base orthonormale pour le produit scalaire usuel sur $\mathbb{R}^N$.
 
-\begin{proof}
-    On considère le produit scalaire usuel sur $\mathbb{R}^N$ :
-    $ \langle x,y\rangle = \sum_{n=0}^{N-1} x_ny_n $
-    On calcule :
-    $$
-        \langle e_k,e_l\rangle = \alpha_k \alpha_l \sum_{n=0}^{N-1} \cos\left(\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right) \cos\left(\frac{\pi}{N}\left(n+\frac{1}{2}\right)l\right)
-    $$
-
-        On remarque alors que $\sum_{n=0}^{N-1} \cos\left(\theta\left(n + \frac{1}{2}\right)\right) = \frac{\sin(N\theta/2)}{2\sin(\theta)}$, d'où :
-    \begin{align*}
-        \langle e_k,e_l\rangle
-        &= \frac{\alpha_k \alpha_l}{2} \left( \frac{\sin(N(\theta_k - \theta_l))}{2\sin((\theta_k - \theta_l)/2)} + \frac{\sin(N(\theta_k + \theta_l))}{2\sin((\theta_k + \theta_l)/2)} \right) \\
-        &= \frac{\alpha_k \alpha_l}{4} \left( \frac{\sin(\pi(k-l))}{\sin(\pi(k-l)/2N)} + \frac{\sin(\pi(k+l))}{\sin(\pi(k+l)/2N)} \right)
-    \end{align*}
-\begin{itemize}
-    \item Si $k \neq l$, alors $\langle e_k,e_l\rangle = \sin(\pi(k-l)) = \sin(\pi(k+l)) = 0$
-    \item Si $k=l \neq 0$, le premier terme vaut $2N$ et le second est nul :
-    $\langle e_k,e_k\rangle = \frac{\alpha_k^2}{4} 2N = \frac{1}{2N}2N= 1$
-    \item Si $k=l=0$, les deux termes valent $2N$ par continuité en 0 :
-    $\langle e_0,e_0\rangle = \frac{\alpha_0^2}{4} (2N + 2N) = 1$
-\end{itemize}
-
-    Ainsi, la famille $(e_k)$ forme une base orthonormale de $\mathbb{R}^N$.
-\end{proof}
+\ref{demo3}
 
 
-
-La DCT peut être vue comme une décomposition du signal sur une base orthogonale de cosinus de fréquences croissantes. L'avantage des cosinus comparés aux exponentielles complexes de la transformée de Fourier réside dans le fat que les valeurs obtenues restent réelles.
+La DCT peut être vue comme une décomposition du signal sur une base orthogonale de cosinus de fréquences croissantes. L'avantage des cosinus comparés aux exponentielles complexes de la transformée de Fourier réside dans le fait que les valeurs obtenues restent réelles.
 
 La DCT possède plusieurs propriétés importantes :
 \begin{itemize}
@@ -73,31 +49,13 @@ L'orthogonalité est un atout important de cette transformation car elle permet 
 \end{align*}
 Cette propriété assure donc qu'il n'y a pas de perte d'information après la transformation. Ainsi, on peut appliquer une transformation inverse afin de retrouver le signal original.
  La transformée inverse, notée IDCT est :
-$$x_n = \sum_{k=1}^{N-1}\alpha_k X_k\cos \left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right], \qquad k = 0,1,\dots,N-1$$
+$$x_n = \sum_{k=0}^{N-1}\alpha_k X_k\cos \left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right], \qquad n = 0,1,\dots,N-1$$
 On a alors IDCT(DCT($x_n$)) = $x_n$
-\begin{proof}
-    On a, par définition,
-    \begin{align*}
-        X_k = \alpha_k\sum_{m=0}^{N-1}x_m\cos \left[\frac{\pi}{N}\left(m+\frac{1}{2}\right)k\right] \\
-        x_n = \sum_{k=0}^{N-1}\alpha_k X_k\cos \left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right]\\
-    \end{align*}
-    On développe, 
-    \begin{align*}
-        IDCT(DCT(x_n))&=\sum_{k=0}^{N-1}\alpha_k \left(\alpha_k\sum_{m=0}^{N-1}x_m\cos \left[\frac{\pi}{N}\left(m+\frac{1}{2}\right)k\right]\right)\cos \left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right]\\
-        &=\sum_{k=0}^{N-1}\left(\alpha_k^2\sum_{m=0}^{N-1}x_m\cos \left[\frac{\pi}{N}\left(m+\frac{1}{2}\right)k\right]\right)\cos \left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right]\\
-        &=\sum_{m=0}^{N-1}x_m\left(\sum_{k=0}^{N-1}\alpha_k^2\cos \left[\frac{\pi}{N}\left(m+\frac{1}{2}\right)k\right]\cos \left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right]\right)\\
-        &=\sum_{m=0}^{N-1}x_m\left(\sum_{k=0}^{N-1}\left(\alpha_k\cos \left[\frac{\pi}{N}\left(m+\frac{1}{2}\right)k\right]\right)\left(\alpha_k\cos \left[\frac{\pi}{N}\left(n+\frac{1}{2}\right)k\right]\right)\right) \\
-    \end{align*}
-    Posons $e_i(k) =\alpha_k\cos\left[\frac{\pi}{N}\left(i+\frac{1}{2}\right)k\right], e_i=(e_i(0),e_i(1), \dots ,e_i(N-1)) \in \mathbb{R}^N$, alors,
-    \begin{align*}    
-        IDCT(DCT(x_n)) &=\sum_{m=0}^{N-1}x_m\left(\sum_{k=0}^{N-1}e_m(k)e_n(k)\right) \\
-        &=\sum_{m=0}^{N-1}x_m\langle e_m,e_n\rangle =\sum_{m=0}^{N-1}x_m\delta_{m,n} = x_n
-    \end{align*}
-\end{proof}
+[\ref{demo4}]
 
 \subsection{Transformation en blocs}
 Le format JPEG divise les images en blocs de pixels (de taille $8 \times 8$ dans notre implémentation conformément au standard JPEG). On peut alors appliquer la DCT sur chacun des blocs. 
-Cette découpe est avantageuse car les pixels au sein d'un même bloc sont souvent corrélés, en effet, les images représentent souvent des objets au sens large et des pixels voisins sont donc susceptibles d'appartenir à un même objet. De plus, il existe des implémentations efficaces permettant d'éviter des calculs répétifs. 
+Cette découpe est avantageuse car les pixels au sein d'un même bloc sont souvent corrélés, en effet, les images représentent souvent des objets au sens large et des pixels voisins sont donc susceptibles d'appartenir à un même objet. De plus, il existe des implémentations efficaces permettant d'éviter des calculs répétitifs. 
 On peut alors calculer les coefficients en cosinus une seule fois :
 
 $$(C_1, C_2, C_3, C_4, C_5, C_6, C_7)
@@ -155,10 +113,12 @@ On observe que les basses fréquences sont positionnées dans le coin supérieur
     \includegraphics[width=0.8\textwidth]{images/Bloc_DCT.png}
     \caption{Exemple de 4 blocs (8 $\times$ 8) contenus dans le spectre}
 \end{figure}
+On remarque que les basses fréquences sont réparties dans les coins supérieurs gauches de chaque bloc contrairement à la FFT où les basses fréquences sont au centre du spectre. \\
+Pour compresser l'image, il suffit de garder un certain pourcentage de coefficients ayant les fréquences les plus basses de manière analogue à la compression avec la FFT vue précédemment.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{images/Image_DCT.png}
     \caption{Image finale après application de la DCT et de la compression avec un taux de conservation d'information de 5\%}
 \end{figure}
-On observe que le fond est plus compressé, d'où les blocs plus visibles, car l'image d'origine comprend un fond  peu détaillé. 
+On observe que le fond est plus compressé, d'où les blocs plus visibles, car l'image d'origine comprend un fond peu détaillé. 
 L'objet contenant le plus de détails, le perroquet, est peu affecté par la compression.

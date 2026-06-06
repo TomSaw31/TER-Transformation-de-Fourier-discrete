@@ -147,34 +147,13 @@ En traitement du signal, on considère souvent abusivement que $\delta$ est une 
     \item[Sa masse] : $\int_{-\infty}^{+\infty}\delta(t)dt = 1$
 \end{description}
 
-On fera également attention à garder à l'esprit que la notation sous forme d'intégrale impropre sur $\mathbb{R}$ faisant intervenir le Dirac dans l'intégrande fait toujours référence à la définition de l'action du Dirac sous forme de limite et ne pose aucun problème de convergence du moment que $g$ est intégrable au voisinnage de 0.
+On fera également attention à garder à l'esprit que la notation sous forme d'intégrale impropre sur $\mathbb{R}$ faisant intervenir le Dirac dans l'intégrande fait toujours référence à la définition de l'action du Dirac sous forme de limite et ne pose aucun problème de convergence du moment que $g$ est intégrable au voisinage de 0.
 
 L'intérêt, pour le traitement du signal, de la distribution de Dirac est sa capacité à isoler une valeur ponctuelle d'un signal. En effet, si on définit de la même manière, l'action du Dirac $\delta(t - t_0)$, centré en $t_0$, par l'identité $\int_{-\infty}^{+\infty} g(t) \delta(t-t_0) dt = \lim_{\alpha \to 0+} \int_{-\infty}^{+\infty} g(t) f_{\alpha}(t-t_0) dt$, alors, on obtient, pour toute fonction $g$ continue en $t_0$, la relation suivante :
 \begin{align*}
     \int_{-\infty}^{+\infty} g(t) \delta(t-t_0) dt = g(t_0)
 \end{align*}
-
-\begin{proof}
-    Soit $g$ une fonction continue en $t_0 \in \mathbb{R}$, on a :
-    \begin{align*}
-        \int_{-\infty}^{+\infty} g(t) \delta(t - t_0) dt = \lim_{\alpha \to 0+} \int_{-\infty}^{+\infty} g(t) f_{\alpha}(t - t_0) dt
-    \end{align*}
-    Soit $\alpha > 0$,
-    \begin{align*}
-        \int_{-\infty}^{+\infty} g(t) f_{\alpha}(t - t_0) dt &= \int_{t_0 - \alpha}^{t_0 + \alpha} \frac{g(t)}{2\alpha} dt \\
-        &= \frac{1}{2 \alpha} \int_{t_0 - \alpha}^{t_0 + \alpha} g(t) dt \\
-        &= \frac{1}{2 \alpha} \left( \int_{t_0 - \alpha}^{t_0 + \alpha} g(t_0) dt + \int_{t_0 - \alpha}^{t_0 + \alpha} \left( g(t) - g(t_0) \right) dt \right) \\
-        &= g(t_0) + \frac{1}{2 \alpha} \int_{t_0 - \alpha}^{t_0 + \alpha} \left( g(t) - g(t_0) \right) dt
-    \end{align*}
-    Or, 
-    \begin{align*}
-        \left| \frac{1}{2 \alpha} \int_{t_0 - \alpha}^{t_0 + \alpha} \left( g(t) - g(t_0) \right) dt \right| &\leq \frac{1}{2 \alpha} \int_{t_0 - \alpha}^{t_0 + \alpha} \left| g(t) - g(t_0) \right| dt \\
-        &\leq \sup_{t \in \left[ t_0 - \alpha ; t_0 + \alpha \right]} \left| g(t) - g(t_0) \right| \to 0 \quad \text{par continuité de g en $t_0$}
-    \end{align*}
-
-    Ainsi, on a bien $\lim_{\alpha \to 0+} \int_{-\infty}^{+\infty} g(t) f_{\alpha}(t - t_0) dt = g(t_0)$.
-
-\end{proof}
+[\ref{demo1}]
 
 \remarque{Cette relation s'apparente au produit de convolution $g \ast \delta$.}
 
@@ -228,7 +207,7 @@ Cette expression transforme une fonction continue en une suite de coefficients $
     \end{center}
 \end{figure}
 
-Pour qu'un signal soit traitable par un algorithme informatique, il faut qu'il comporte un nombre fini de valeurs. Il suffit alors de considérer un signal continu sur un intervalle de longueur fini puis de l'échantillonner pour ne garder qu'un nombre fini $N$ de valeurs. On peut alors considérer ce signal échantillonné fini comme un vecteur :
+Pour qu'un signal soit traitable par un algorithme informatique, il faut qu'il comporte un nombre fini de valeurs. Il suffit alors de considérer un signal continu sur un intervalle de longueur finie puis de l'échantillonner pour ne garder qu'un nombre fini $N$ de valeurs. On peut alors considérer ce signal échantillonné fini comme un vecteur :
 \begin{align*}
     x = (s(0),s(T),s(2T),...,s((N-1)T)) =  (x_0,x_1,...,x_{N-1}) \in \mathbb{C}^N
 \end{align*}
