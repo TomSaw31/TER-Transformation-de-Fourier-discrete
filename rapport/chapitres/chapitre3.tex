@@ -2,25 +2,28 @@
 
 \subsection{Transformée de Fourier Continue}
 
-Le mathématicien Joseph Fourier a démontré que la plupart des signaux que l'on souhaite étudier dans le cadre du traitement de signal peuvent s'écrire comme une somme d'exponentielles complexes \cite{wiki-fft} . Ainsi, un signal est caractérisé par sa phase, son amplitude mais surtout par sa, ou ses, fréquences (largeur des oscillations). L'enjeu de cette section va être d'introduire des outils permettant de passer du domaine temporel, où le signal est caractérisé par le temps $t$, vers le domaine fréquentiel, paramétré par des fréquences.
+Le mathématicien Joseph Fourier a démontré que la plupart des signaux que l'on souhaite étudier dans le cadre du traitement du signal peuvent s'écrire comme une somme d'exponentielles complexes \cite{wiki-fft} . Ainsi, un signal est caractérisé par sa phase, son amplitude mais surtout par sa, ou ses, fréquences (largeur des oscillations). L'enjeu de cette section va être d'introduire des outils permettant de passer du domaine temporel, où le signal est caractérisé par le temps $t$, vers le domaine fréquentiel, paramétré par des fréquences.
 
-Avant d'aborder la transformée de Fourier discrète, il est nécessaire de définir un outil qui permet d'extraire la fréquence d'un signal. Pour une fonction $f$ représentant un signal quelconque, on utilise la définition suivante:
+Avant d'aborder la transformée de Fourier discrète, il est nécessaire de définir un outil qui permet d'extraire la fréquence d'un signal. Pour un signal complexe $s$, on utilise la définition suivante:
 
 
-Soit $f$ intégrable sur $\mathbb{R}$. La \textbf{transformée de Fourier} de $f$, notée $TF[f]$, est la fonction :
+Soit $s$ intégrable sur $\mathbb{R}$. La \textbf{transformée de Fourier} de $s$, notée $TF[s]$, est la fonction :
 \begin{align*}
-    &TF[f] : x \mapsto \int_{-\infty}^{+\infty} f(t) \cdot e^{-2 i \pi x t}dt
+    &TF[s] : x \mapsto \int_{-\infty}^{+\infty} s(t) \cdot e^{-2 i \pi x t}dt
 \end{align*}
 
-\remarque{Dans le cadre du traitement de signal, la fonction à laquelle on applique une TF est un signal, $x(t)$, sa transformée de Fourier est alors notée $X(f)$ où $f$ désigne la fréquence. On a :
+\remarque{Dans le cadre du traitement de signal, on appelle généralement le signal à traiter $x(t)$, sa transformée de Fourier est alors notée $X(f)$ où $f$ désigne la fréquence. On a :
     \begin{align*}
         &X(f) = \int_{-\infty}^{+\infty} x(t) \cdot e^{-i 2 \pi f t} dt \\
         &X(\omega) = \int_{-\infty}^{+\infty} x(t) \cdot e^{-i \omega t} dt \quad \text{avec $\omega = 2 \pi f$ la pulsation}
     \end{align*}
 }
 
+$X$ est appelé spectre du signal $x$ \cite{wiki-tf}. La valeur $|X(f)|$ correspond alors à l'amplitude associée à la fréquence $f$ dans la décomposition en fréquences du signal $x$. Considérons un exemple simple, si $x(t) = 3 e^{2 i * \pi t} + 5 e^{6 i \pi t}$, alors $X(f) = 5 \delta(f - 3) + 3 \delta(f - 1)$. Les termes $3 e^{2 i * \pi t}$ et $5 e^{6 i \pi t}$ ont pour périodes 1 et $\tfrac{1}{3}$ respectivement, on obtient donc les fréquences 1 et 3, les coefficients multiplicatifs sont conservés, ils correspondent à l'amplitude de ces deux signaux exponentiels.
+
 
 \subsection{Transformée de Fourier Discrète}
+\label{section-TFD}
 
 Soit $x = (x_0, x_1, \dots, x_{N-1}) \in \mathbb{C}^N$ le vecteur du signal échantillonné. On appelle \textbf{Transformée de Fourier Discrète} \cite{wiki-tfd} de $x$, le vecteur $X = (X_0, X_1,..., X_{N-1}) \in \mathbb{C}^N$ avec :
 $$
@@ -32,11 +35,10 @@ Cette formule permet de passer du domaine temporel $(x_k)$ au domaine fréquenti
 De manière analogue, on peut définir la {Transformée de Fourier Discrète Inverse} qui permet de revenir du domaine fréquentiel au domaine temporel :
 $$x_k = \dfrac{1}{N}\sum_{n=0}^{N-1}X_ne^{i \frac{2 \pi}{N}kn}\quad \forall k \in \{0, \dots, N-1\}
 $$
-On a alors TFDI(TFD($x_n$)) = $x_n$ 
-[\ref{demo2}]
+On a alors TFDI(TFD($x_n$)) = $x_n$ (\hyperref[preuve-TFDI]{Voir la démonstration en annexe})
 
 \subsection{Spectre d'une image}
-Soit $f$ une image de taille $M \times N$, représentée par une matrice de pixels où $f(x, y) \in \mathbb{C}$ est l'intensité du pixel à la position $(x, y)$.
+Soit $f$ une image en niveaux de gris de taille $M \times N$, représentée par une matrice de pixels où $f(x, y) \in \mathbb{C}$ est l'intensité du pixel à la position $(x, y)$.
 
 On appelle Transformée de Fourier Discrète 2D de l'image $f$, la matrice $F$ de taille $M \times N$ dont les coefficients $a_{k, l} \in \mathbb{C}$ sont définis par :
 $$a_{k, l} = \sum_{m=0}^{M-1} \left( \sum_{n=0}^{N-1} f(m, n) e^{-i \frac{2\pi}{M} km} \right) e^{-i \frac{2\pi}{N} ln}
@@ -44,6 +46,3 @@ $$a_{k, l} = \sum_{m=0}^{M-1} \left( \sum_{n=0}^{N-1} f(m, n) e^{-i \frac{2\pi}{
 Pour tout $k \in \{0, \dots, M-1\}$ et tout $l \in \{0, \dots, N-1\}$.
 
 Cette matrice donne le spectre du signal en deux dimensions. Elle permettra par la suite de compresser les images en ne gardant que les coefficients significatifs.
-
-
-% Dans les sections précédentes donner des exemples (notamment graphique) du spectre d'un signal et expliquer à quoi correspond le spectre d'un signal. L'enjeu de cette section est d'expliquer comment appliquer la transformée de Fourier à une image 2D et comment interpréter le spectre 2D obtenu, on pourra utiliser les résultats du notebook pour illustrer.

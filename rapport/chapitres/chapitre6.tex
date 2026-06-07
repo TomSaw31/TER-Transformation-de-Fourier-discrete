@@ -3,7 +3,7 @@
 Nous avons vu plusieurs algorithmes pour la compression des images. Il devient alors nécessaire d'introduire différentes métriques pour quantifier les différences entre l'image originale et celles compressées par les algorithmes.
 
 Nous verrons dans cette partie différentes métriques, certaines pour quantifier les différences purement mathématiques et 
-d'autres pour approximer les différences perceptibles par l'oeil humain. Ces métriques seront utiles afin de déterminer plus tard 
+d'autres pour approximer les différences perceptibles par l'\oe il humain. Ces métriques seront utiles afin de déterminer plus tard 
 le taux de compression optimal pour faire un compromis entre la taille du fichier et la qualité de l'image.
 
 \subsection{Erreur Moyenne Quadratique}
@@ -27,19 +27,20 @@ Cette métrique telle quelle est peu utilisée en traitement du signal mais sert
 plus adaptée pour la quantification de la compression de signal.
 
 \subsection{Peak Signal-to-Noise Ratio}
-La métrique \textbf{Peak Signal-to-Noise Ratio (PSNR)} est la plus utilisée pour la compression d'images. Elle est basée sur la calcul de l'erreur moyenne quadratique.
+
+La métrique \textbf{Peak Signal-to-Noise Ratio (PSNR)} est la plus utilisée pour la compression d'images. Elle est basée sur le calcul de l'erreur moyenne quadratique.
 \\ Le PSNR s'exprime en décibels dB.
 $$ PSNR = 10 \cdot \log_{10}(\frac{255^2}{MSE})$$
 Cette métrique donne le rapport entre la valeur maximale d'un pixel au carré et la MSE. Le passage au $\log_{10}$ et l'ajout du facteur $10$ permettent de réduire l'échelle 
 des valeurs prises par le PSNR afin que cela soit plus facilement interprétable par une personne. Ainsi, une valeur très faible indique une perte conséquente de qualité d'image, alors
-qu'une valeur élevée indique une image compressée fidèle à l'image originale. En pratique, on rajoute un petit facteur à la MSE ($10^{-100}$ dans notre implémentation) 
-pour éviter une division par $0$ si l'on veut calculer le PSNR avec une compression nulle, l'image a donc une $MSE$ nulle.
+qu'une valeur élevée indique une image compressée fidèle à l'image originale.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/PSNR.png}
     \caption{Evolution du PSNR en fonction du ratio de la compression}
 \end{figure}
+
 On observe logiquement que le PSNR est meilleur avec la DCT qu'avec la FFT car la MSE donnée après compression avec DCT était inférieure à la MSE après compression avec FFT.
 
 Les deux métriques vues précédemment étant purement mathématiques, elles restent difficiles à interpréter. 
@@ -47,6 +48,7 @@ De plus, une valeur d'une métrique peut avoir plusieurs interprétations. Ainsi
 l'ajout d'un artéfact concentré en une région de l'image. Il peut alors devenir intéressant de développer de nouvelles métriques plus proches de la vision humaine.
 
 \subsection{Structural Similarity Index Measure}
+
 La \textbf{Structural Similarity Index Measure (SSIM)} se concentre sur la perception de l'oeil humain plutôt que sur la théorie mathématique. 
 Contrairement à la MSE et au PSNR qui reposent sur des différences pixel à pixel, la SSIM compare la structure globale de l'image. Elle est calculée à l'aide de 
 deux fenêtres de taille $N\times N$, la première ($x$) sur l'image originale et la seconde ($y$) sur l'image compressée : 
@@ -81,3 +83,4 @@ On en déduit que plus la SSIM est proche de $1$ et plus les images sont semblab
 \end{figure}
 On observe que la SSIM est bien meilleure avec la DCT qu'avec la FFT. On peut expliquer cela car la DCT regroupe les zones sans détails en carrés et garde
 les zones détaillées nettes. Ainsi, les zones plus détaillées sont peu modifiées alors que le fond de l'image qui est moins détaillé devient flou au fil de la compression, modifiant peu la perception finale de l'image.
+

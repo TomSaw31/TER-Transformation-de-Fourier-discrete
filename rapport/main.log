@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.20)  1 MAY 2026 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.20)  7 JUN 2026 20:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1000,24 +1000,24 @@ Package babel Info: 'french' activates 'french' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
+LaTeX Font Info:    ... okay on input line 100.
  (C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count499
@@ -1037,7 +1037,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 96.
+Package hyperref Info: Link coloring OFF on input line 100.
  (main.out) (main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -1045,7 +1045,7 @@ Package hyperref Info: Link coloring OFF on input line 96.
 
 Package pgfplots notification 'compat/show suggested version=true': document has been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
-LaTeX Info: Redefining \degres on input line 96.
+LaTeX Info: Redefining \degres on input line 100.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1093,11 +1093,16 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 96.
-Package biblatex Info: Reference segment=0 on input line 96.
+Package biblatex Info: Reference section=0 on input line 100.
+Package biblatex Info: Reference segment=0 on input line 100.
+<images/logo-UT-site.png, id=94, 1563.8425pt x 501.875pt>
+File: images/logo-UT-site.png Graphic file (type png)
+<use images/logo-UT-site.png>
+Package pdftex.def Info: images/logo-UT-site.png  used on input line 105.
+(pdftex.def)             Requested size: 170.71652pt x 54.78522pt.
  [1
 
-{C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (main.toc
+{C:/Users/Utilisateur/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images/logo-UT-site.png (PNG copy)>] (main.toc
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 4.
  (C:\Users\Utilisateur\AppData\Local\Programs\MiKTeX\tex/latex/jknappen\ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
@@ -1119,168 +1124,185 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.119 \newpage
+l.130 \newpage
                [1] (chapitres/chapitre1.tex
 <images/joseph_fourier.jpg, id=132, 193.9245pt x 237.0456pt>
 File: images/joseph_fourier.jpg Graphic file (type jpg)
 <use images/joseph_fourier.jpg>
 Package pdftex.def Info: images/joseph_fourier.jpg  used on input line 5.
 (pdftex.def)             Requested size: 113.81102pt x 139.1178pt.
-) (chapitres/chapitre2.tex [2
+)
+Underfull \hbox (badness 2150) in paragraph at lines 15--133
+[]\T1/cmr/m/n/10 On pourra re-trou-ver � l'adresse []$\T1/cmtt/m/n/10 https : / / github . com / TomSaw31 /
+ []
+
+(chapitres/chapitre2.tex [2
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.48 
+l.42 
      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.48 
-      <./images/joseph_fourier.jpg>] [3
+l.42 
+      <./images/joseph_fourier.jpg>]) (chapitres/chapitre3.tex [3
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.151 
-      ] [4]) (chapitres/chapitre3.tex [5
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.7 A
-     vant d'aborder la transformée de Fourier discrète, il est nécessaire...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.7 A
-     vant d'aborder la transformée de Fourier discrète, il est nécessaire...] [6]) (chapitres/chapitre4.tex [7] [8
+l.13 \end{align*}
+                 ]) (chapitres/chapitre4.tex [4] [5] [6
 pdfTeX warning (ext4): destination with the same identifier (name{algocf.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.86         \item $
-                    X_0 = E[0] + \alpha \times O[0] = E[0] + 1 \times O[0]$] [9]
-<images/FFT_performances.png, id=217, 409.7709pt x 328.8285pt>
+l.103 
+      ]
+<images/FFT_performances.png, id=207, 409.7709pt x 328.8285pt>
 File: images/FFT_performances.png Graphic file (type png)
 <use images/FFT_performances.png>
-Package pdftex.def Info: images/FFT_performances.png  used on input line 209.
-(pdftex.def)             Requested size: 332.68385pt x 266.9768pt.
- [10
+Package pdftex.def Info: images/FFT_performances.png  used on input line 158.
+(pdftex.def)             Requested size: 266.14978pt x 213.58546pt.
+ [7
 pdfTeX warning (ext4): destination with the same identifier (name{algocf.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.212 
+l.161 
       ]
-<images/FFT_performances_compilees.png, id=227, 422.0568pt x 328.8285pt>
-File: images/FFT_performances_compilees.png Graphic file (type png)
-<use images/FFT_performances_compilees.png>
-Package pdftex.def Info: images/FFT_performances_compilees.png  used on input line 221.
-(pdftex.def)             Requested size: 332.68385pt x 259.2097pt.
+<images/Spectres_FFT.png, id=219, 813.7602pt x 453.8556pt>
+File: images/Spectres_FFT.png Graphic file (type png)
+<use images/Spectres_FFT.png>
+Package pdftex.def Info: images/Spectres_FFT.png  used on input line 167.
+(pdftex.def)             Requested size: 332.68385pt x 185.54182pt.
+) [8
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.139 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.139 
+       <./images/FFT_performances.png> <./images/Spectres_FFT.png>] (chapitres/chapitre5.tex [9] [10]
+<images/Spectre_DCT.png, id=249, 714.7503pt x 200.1879pt>
+File: images/Spectre_DCT.png Graphic file (type png)
+<use images/Spectre_DCT.png>
+Package pdftex.def Info: images/Spectre_DCT.png  used on input line 104.
+(pdftex.def)             Requested size: 443.57848pt x 124.24043pt.
+<images/Bloc_DCT.png, id=250, 706.0779pt x 353.4003pt>
+File: images/Bloc_DCT.png Graphic file (type png)
+<use images/Bloc_DCT.png>
+Package pdftex.def Info: images/Bloc_DCT.png  used on input line 109.
+(pdftex.def)             Requested size: 354.86412pt x 177.61641pt.
  [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.224 
-       <./images/FFT_performances.png>]) (chapitres/chapitre5.tex [12
+l.112 O
+       n remarque que les basses fréquences sont réparties dans les coins ... <./images/Spectre_DCT.png>]
+<images/Image_DCT.png, id=257, 600.5637pt x 328.1058pt>
+File: images/Image_DCT.png Graphic file (type png)
+<use images/Image_DCT.png>
+Package pdftex.def Info: images/Image_DCT.png  used on input line 116.
+(pdftex.def)             Requested size: 332.68385pt x 181.76042pt.
+) (chapitres/chapitre6.tex [12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.21 \end{array} \right.$$
-                           <./images/FFT_performances_compilees.png>] [13] [14]
-<images/Spectre_DCT.png, id=254, 714.7503pt x 200.1879pt>
-File: images/Spectre_DCT.png Graphic file (type png)
-<use images/Spectre_DCT.png>
-Package pdftex.def Info: images/Spectre_DCT.png  used on input line 150.
-(pdftex.def)             Requested size: 443.57848pt x 124.24043pt.
- [15]
-<images/Bloc_DCT.png, id=259, 706.0779pt x 353.4003pt>
-File: images/Bloc_DCT.png Graphic file (type png)
-<use images/Bloc_DCT.png>
-Package pdftex.def Info: images/Bloc_DCT.png  used on input line 155.
-(pdftex.def)             Requested size: 354.86412pt x 177.61641pt.
-<images/Image_DCT.png, id=260, 600.5637pt x 328.1058pt>
-File: images/Image_DCT.png Graphic file (type png)
-<use images/Image_DCT.png>
-Package pdftex.def Info: images/Image_DCT.png  used on input line 160.
-(pdftex.def)             Requested size: 332.68385pt x 181.76042pt.
- [16
+l.8 
+    
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.163 O
-       n observe que le fond est plus compressé, d'où les blocs plus visib...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.163 O
-       n observe que le fond est plus compressé, d'où les blocs plus visib... <./images/Spectre_DCT.png> <./images/Bloc_DCT.png>]) (chapitres/chapitre6.tex
-<images/MSE.png, id=269, 412.6617pt x 330.2739pt>
+l.8 
+     <./images/Bloc_DCT.png> <./images/Image_DCT.png>]
+<images/MSE.png, id=267, 412.6617pt x 330.2739pt>
 File: images/MSE.png Graphic file (type png)
 <use images/MSE.png>
 Package pdftex.def Info: images/MSE.png  used on input line 21.
 (pdftex.def)             Requested size: 221.78923pt x 177.50867pt.
- [17
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+ [13
+pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.24 O
-      n observe que la MSE sur l'image compressée avec la DCT est inférieu... <./images/Image_DCT.png>]
-<images/PSNR.png, id=276, 406.1574pt x 330.2739pt>
+l.37 
+      <./images/MSE.png>]
+<images/PSNR.png, id=274, 406.1574pt x 330.2739pt>
 File: images/PSNR.png Graphic file (type png)
 <use images/PSNR.png>
 Package pdftex.def Info: images/PSNR.png  used on input line 40.
 (pdftex.def)             Requested size: 221.78923pt x 180.35098pt.
- [18
+ [14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.68 $$
+        c(x,y) = \frac{2\sigma_x \sigma_y + c_2}{\sigma_x^2 + \sigma_y^2 + c... <./images/PSNR.png>]
+<images/SSIM.png, id=281, 409.7709pt x 330.2739pt>
+File: images/SSIM.png Graphic file (type png)
+<use images/SSIM.png>
+Package pdftex.def Info: images/SSIM.png  used on input line 81.
+(pdftex.def)             Requested size: 221.78923pt x 178.75848pt.
+) [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.43 O
-      n observe logiquement que le PSNR est meilleur avec la DCT qu'avec la ... <./images/MSE.png>] [19
+l.145 
+       <./images/SSIM.png>] (chapitres/chapitre7.tex) [16] (chapitres/annexe.tex [17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.69 $$
-        s(x,y) = \frac{cov_{xy}+c_3}{\sigma_x\sigma_y+c_3} $$ <./images/PSNR.png>]
-<images/SSIM.png, id=290, 409.7709pt x 330.2739pt>
-File: images/SSIM.png Graphic file (type png)
-<use images/SSIM.png>
-Package pdftex.def Info: images/SSIM.png  used on input line 79.
-(pdftex.def)             Requested size: 221.78923pt x 178.75848pt.
-)
-Overfull \hbox (26.30106pt too wide) in paragraph at lines 134--134
-[][]\T1/cmr/m/sc/10 Klafyvel[]\T1/cmr/m/n/10 . \T1/cmr/m/it/10 Jouons � im-pl�-men-ter une trans-for-m�e de Fou-rier ra-pide ! \T1/cmr/m/sc/10 url \T1/cmr/m/n/10 : []$\T1/cmtt/m/n/10 https : / / zestedesavoir .
- []
-
-
-Overfull \hbox (14.84465pt too wide) in paragraph at lines 134--134
-[]\T1/cmr/m/n/10 Jimmy []\T1/cmr/m/sc/10 Roussel[]\T1/cmr/m/n/10 . \T1/cmr/m/it/10 R�-gime si-nu-so�-dal forc�\T1/cmr/m/n/10 . \T1/cmr/m/sc/10 url \T1/cmr/m/n/10 : []$\T1/cmtt/m/n/10 https : / / femto -[] physique . fr / electrocinetique /
- []
-
-[20
+l.110     \item[Sa concentration]
+                                  : $\forall t \neq 0, \delta(t) = 0$] [18] [19
 pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.134 \end
-          {document} <./images/SSIM.png>] [21] (main.aux)
+l.171 
+      ] [20] [21]
+<images/FFT_performances_compilees.png, id=356, 422.0568pt x 328.8285pt>
+File: images/FFT_performances_compilees.png Graphic file (type png)
+<use images/FFT_performances_compilees.png>
+Package pdftex.def Info: images/FFT_performances_compilees.png  used on input line 264.
+(pdftex.def)             Requested size: 266.14978pt x 207.36876pt.
+ [22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.269 
+       <./images/FFT_performances_compilees.png>]
+<images/Tore.png, id=365, 770.88pt x 385.44pt>
+File: images/Tore.png Graphic file (type png)
+<use images/Tore.png>
+Package pdftex.def Info: images/Tore.png  used on input line 279.
+(pdftex.def)             Requested size: 332.68385pt x 166.34174pt.
+ [23
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.293 
+       <./images/Tore.png>] [24] [25]) [26] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 81C3A0B54F248696C9F73441F007D3F5;4024.
+(rerunfilecheck)             Checksum: 555F775A02FC85EBE57E9073416D7C8E;3953.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45048 strings out of 467867
- 1013151 string characters out of 5415430
- 1935896 words of memory out of 5000000
- 73172 multiletter control sequences out of 15000+600000
- 649961 words of font info for 95 fonts, out of 8000000 for 9000
+ 45126 strings out of 467867
+ 1014995 string characters out of 5415430
+ 1940950 words of memory out of 5000000
+ 73221 multiletter control sequences out of 15000+600000
+ 649197 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,20n,104p,832b,2175s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cyrillic/wncyr10.pfb>
-Output written on main.pdf (22 pages, 1220869 bytes).
+ 84i,20n,104p,1203b,2175s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0900.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Utilisateur\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1440.pk><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/Utilisateur/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cyrillic/wncyr10.pfb>
+Output written on main.pdf (27 pages, 1997209 bytes).
 PDF statistics:
- 903 PDF objects out of 1000 (max. 8388607)
- 79 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1004 PDF objects out of 1200 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -38,151 +38,21 @@ Commençons par introduire la notion de signal. On appelle \textbf{signal analog
 
     \vspace{0.5cm}
 
-    Le signal $s(t) = A e^{i(2\pi ft + \phi)}$ représenté ici est un signal dit "pur". En réalité, la plupart des signaux ont des formes beaucoup plus complexes et ne ressemblent pas à une simple sinusoïde. 
+Le signal $s(t) = A e^{i(2\pi ft + \phi)}$ représenté ici est un signal dit "pur". En réalité, la plupart des signaux ont des formes beaucoup plus complexes et ne ressemblent pas à une simple sinusoïde. 
 
-    Le traitement numérique du signal nécessite une discrétisation pour y appliquer des algorithmes informatiques.
+Le traitement numérique du signal nécessite une discrétisation pour y appliquer des algorithmes informatiques.
 
-\subsection{Echantillonnage}
+\subsection{Échantillonnage}
+\label{section-echantillonnage}
 
-Le passage au numérique demande de ne conserver que certaines valeurs isolées du signal. Nous devons alors introduire la notion de \textbf{distribution de Dirac}. Dans le cadre de notre étude, nous utiliserons une définition alternative \cite{dirac} , plus faible que la définition usuelle du Dirac. Cette définition plus intuitive est parfaitement suffisante pour l'utilisation que l'on en fera et ne fait pas appel à la théorie de la mesure.
+Les signaux analogiques décrits précédemment ne peuvent pas être traités numériquement tels quels. L'échantillonnage est le processus permettant de passer d'un signal analogique à un signal numérique. Il consiste en la sélection d'un nombre fini de valeurs du signal analogique pour constituer un vecteur de coefficients représentatif du signal.
 
-Soit $(f_\alpha)_{\alpha \in \mathbb{\mathbb{R}+}}$ la famille de fonctions définies par :
+Pour ce faire, on choisit un intervalle de temps, que l'on découpe en $N$ sous-intervalles de longueur $T$. L'échantillonnage correspond alors à conserver uniquement les valeurs du signal aux temps $nT$ pour $T \in \{0, \dots, N - 1\}$ (\hyperref[preuve-echantillonnage]{Voir le procédé détaillé en annexe}). On peut alors considérer ce signal échantillonné fini comme un vecteur :
 \begin{align*}
-    f_\alpha : t \mapsto \left\{ \begin{array}{cl} \frac{1}{2\alpha} & \text{si} \ t \in [-\alpha;\alpha] \\ 0 &  \text{sinon} 
-\end{array} \right.
+    x = (s(0),s(T),s(2T),...,s((N-1)T)) =  (x_0,x_1,...,x_{N-1}) \in \mathbb{C}^N
 \end{align*}
 
-On définit l'action du Dirac $\delta$ sur une fonction $g$, continue en $0$, par :
-\begin{align*}
-    \int_{-\infty}^{+\infty} g(t) \delta(t) dt \coloneqq \lim_{\alpha \to 0}  \int_{-\infty}^{+\infty} g(t) f_\alpha(t) dt
-\end{align*}
-Soit $\alpha > 0$,
-\begin{align*}
-    \int_{-\infty}^{+\infty} f_\alpha(t) dt = \int_{-\alpha}^{\alpha} \frac{1}{2\alpha} dt = \frac{1}{2\alpha} \int_{-\alpha}^{\alpha} dt = 1
-\end{align*}
-
-\begin{figure}[H]
-    \caption{$f_\alpha$ pour $\alpha = 1, \tfrac{1}{2}, \tfrac{1}{4}$}
-    \begin{tikzpicture}[scale = 1]
-        \begin{axis}[
-            axis lines = middle,
-            unit vector ratio={1 1},
-            xlabel = {$x$},
-            ylabel = {$y$},
-            ymin = -0.5, ymax = 2,
-            xmin = -1, xmax = 1,
-            grid = both,
-            xticklabels = {,,},
-            yticklabels = {,,},
-            tick style = {draw=none}
-        ]
-        \addplot [color=red, thick] coordinates {
-            (-1, 0) 
-            (-0.5, 0) 
-            (-0.5, 0.25) 
-            (0.5, 0.25) 
-            (0.5, 0) 
-            (1, 0)
-        };
-        \end{axis}
-    \end{tikzpicture}
-    \begin{tikzpicture}[scale = 1]
-        \begin{axis}[
-            axis lines = middle,
-            unit vector ratio={1 1},
-            xlabel = {$x$},
-            ylabel = {$y$},
-            ymin = -0.5, ymax = 2,
-            xmin = -1, xmax = 1,
-            grid = both,
-            xticklabels = {,,},
-            yticklabels = {,,},
-            tick style = {draw=none}
-        ]
-        \addplot [color=red, thick] coordinates {
-            (-1, 0) 
-            (-0.25, 0) 
-            (-0.25, 0.5) 
-            (0.25, 0.5) 
-            (0.25, 0) 
-            (1, 0)
-        };
-        \end{axis}
-    \end{tikzpicture}
-    \begin{tikzpicture}[scale = 1]
-        \begin{axis}[
-            axis lines = middle,
-            unit vector ratio={1 1},
-            xlabel = {$x$},
-            ylabel = {$y$},
-            ymin = -0.5, ymax = 2,
-            xmin = -1, xmax = 1,
-            grid = both,
-            xticklabels = {,,},
-            yticklabels = {,,},
-            tick style = {draw=none}
-        ]
-        \addplot [color=red, thick] coordinates {
-            (-1, 0) 
-            (-0.125, 0) 
-            (-0.125, 1) 
-            (0.125, 1) 
-            (0.125, 0) 
-            (1, 0)
-        };
-        \end{axis}
-    \end{tikzpicture}
-\end{figure}
-
-
-En appliquant la définition de l'action du Dirac sur la fonction constante $g = 1$, on obtient :
-\begin{align*}
-    \int_{-\infty}^{+\infty} \delta(t) dt = \lim_{\alpha \to 0^+} \int_{-\infty}^{+\infty}f_\alpha(t)dt = \lim_{\alpha \to 0^+} 1 = 1
-\end{align*}
-
-En traitement du signal, on considère souvent abusivement que $\delta$ est une fonction réelle, valant 0 partout sauf en 0 où elle vaut \og +$\infty$ \fg,  mais il s'agit bien d'une distribution caractérisée par :
-
-\begin{description}
-    \item[Sa concentration] : $\forall t \neq 0, \delta(t) = 0$
-    \item[Sa masse] : $\int_{-\infty}^{+\infty}\delta(t)dt = 1$
-\end{description}
-
-On fera également attention à garder à l'esprit que la notation sous forme d'intégrale impropre sur $\mathbb{R}$ faisant intervenir le Dirac dans l'intégrande fait toujours référence à la définition de l'action du Dirac sous forme de limite et ne pose aucun problème de convergence du moment que $g$ est intégrable au voisinage de 0.
-
-L'intérêt, pour le traitement du signal, de la distribution de Dirac est sa capacité à isoler une valeur ponctuelle d'un signal. En effet, si on définit de la même manière, l'action du Dirac $\delta(t - t_0)$, centré en $t_0$, par l'identité $\int_{-\infty}^{+\infty} g(t) \delta(t-t_0) dt = \lim_{\alpha \to 0+} \int_{-\infty}^{+\infty} g(t) f_{\alpha}(t-t_0) dt$, alors, on obtient, pour toute fonction $g$ continue en $t_0$, la relation suivante :
-\begin{align*}
-    \int_{-\infty}^{+\infty} g(t) \delta(t-t_0) dt = g(t_0)
-\end{align*}
-[\ref{demo1}]
-
-\remarque{Cette relation s'apparente au produit de convolution $g \ast \delta$.}
-
-Pour obtenir un échantillonnage d'un signal, il faut réaliser plusieurs extractions de valeurs à l'aide du Dirac. Il est alors pertinent d'introduire le \textbf{peigne de Dirac} de période $T$, noté $\Sha_{T}$ :
-\begin{align*}
-    \Sha_{T}(t) = \sum_{n\in\mathbb{Z}} \delta(t - nT)
-\end{align*}
-
-\begin{figure}[H]
-    \begin{center}
-    \caption{Peigne de Dirac de période $T$}
-    \begin{tikzpicture}[scale=1.5]
-        \draw[->] (-3,0) -- (3,0) node[right] {$t$};
-        \draw[->] (0,-0.5) -- (0,1.5) node[above] {$\Sha_{T}(t)$};
-        \foreach \x in {-2.5, -2, ..., 2.5} {
-            \draw[-, blue, thick] (\x, 0) -- (\x, 1);
-            \draw[dashed, blue, thick] (\x, 1) -- (\x, 1.5);
-        }
-        \draw[<->] (1, -0.15) -- (1.5, -0.15) node[midway, below, font=\tiny] {$T$};
-    \end{tikzpicture}
-    \end{center}
-\end{figure}
-
-Le signal échantillonné $s_e(t)$ est alors modélisé par le produit du signal analogique $s(t)$ et du peigne de Dirac $\Sha_{T}$:
-\begin{align*}
-    s_e(t) = s(t) \cdot \Sha_{T}(t) = \sum_{n\in\mathbb{Z}} s(nT) \delta(t - nT)
-\end{align*}
-
-Cette expression transforme une fonction continue en une suite de coefficients $s(nT)$ qui pourront être traités avec des méthodes numériques.
+On peut alors appliquer des traitements numériques à $x$, le signal échantillonné de $s$.
 
 \begin{figure}[H]
     \caption{Échantillonnage d'une fonction continue}
@@ -206,8 +76,3 @@ Cette expression transforme une fonction continue en une suite de coefficients $
     \end{tikzpicture}
     \end{center}
 \end{figure}
-
-Pour qu'un signal soit traitable par un algorithme informatique, il faut qu'il comporte un nombre fini de valeurs. Il suffit alors de considérer un signal continu sur un intervalle de longueur finie puis de l'échantillonner pour ne garder qu'un nombre fini $N$ de valeurs. On peut alors considérer ce signal échantillonné fini comme un vecteur :
-\begin{align*}
-    x = (s(0),s(T),s(2T),...,s((N-1)T)) =  (x_0,x_1,...,x_{N-1}) \in \mathbb{C}^N
-\end{align*}
